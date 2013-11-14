@@ -40,3 +40,4 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 
 # API stuff
 gem 'httparty'
+gem 'em-http-request'
