@@ -8,6 +8,9 @@ gem 'pg'
 gem 'puma'
 gem 'figaro'
 
+# Tempo DB
+gem 'tempodb'
+
 # Heroku
 gem 'rails_12factor', group: :production
 
