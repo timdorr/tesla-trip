@@ -14,7 +14,7 @@ class TeslaStreamReader
 
       puts "Streaming car telematics..."
       car.stream do |state|
-        puts "Recieved state: #{state.inspect}"
+        puts "Received state: #{state.inspect}"
 
         data = []
         state.except(:time).each do |key, value|
