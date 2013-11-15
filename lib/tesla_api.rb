@@ -146,7 +146,9 @@ class TeslaApi
              power:       attributes[8].to_f
           })
         end
-        http.errback { EventMachine.stop }
+
+        http.callback { EventMachine.stop }
+        http.errback  { EventMachine.stop }
       end
     end
   end
