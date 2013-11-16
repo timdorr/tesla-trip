@@ -6,9 +6,12 @@ html
     title Track Tim's Model S
 
     = stylesheet_link_tag "application", media: "all"
+    link href='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.css' rel='stylesheet'
+
     = csrf_meta_tags
 
   body
     = yield
 
+    script src='//api.tiles.mapbox.com/mapbox.js/v1.4.2/mapbox.js'
     = javascript_include_tag "application"
