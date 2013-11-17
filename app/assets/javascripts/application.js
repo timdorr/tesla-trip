@@ -10,22 +10,23 @@ map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 
+var carData = [];
 var carPathLayer = null;
+var carGeoJSON = { type: 'LineString', coordinates: [] };
 
 function getTelemetry() {
   $.ajax({
     dataType: "json",
     url: "/telemetry"
   }).done(function(response){
-      var geoJSON = { type: 'LineString', coordinates: [] };
-      var data = response.data;
-      var length = data.length;
+      carData = response.data;
+      var length = carData.length;
 
       for (var i = 0; i < length; i++) {
-        geoJSON.coordinates.push([data[i].lng, data[i].lat].slice());
+        carGeoJSON.coordinates.push([carData[i].lng, carData[i].lat]);
       }
 
-      carPathLayer = L.geoJson(geoJSON).addTo(map);
+      carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#0f9727", weight: 3, dashArray: "5,10" } }).addTo(map);
     });
 }
 

@@ -16,6 +16,8 @@ class TempodbData
           power:    tempo_data[:power   ][index].value
       }
     end
+
+    @data.reverse!
   end
 
   private
