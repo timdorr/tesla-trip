@@ -41,7 +41,7 @@ var locationPulse = L.divIcon({
 var locationMarker, locationMarkerPulse;
 
 function loadTelemetry() {
-  routePathLayer = L.geoJson(routeGeoJSON, { style: { weight: 6 } }).addTo(map);
+  routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
 
   $.ajax({
     dataType: "json",
@@ -54,7 +54,7 @@ function loadTelemetry() {
         carGeoJSON.coordinates.push([carData[i].lng, carData[i].lat]);
       }
 
-      carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#0f9727", weight: 3, dashArray: "5,10" } }).addTo(map);
+      carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#7e3700", weight: 3, dashArray: "5,10" } }).addTo(map);
 
       var lastLocation = carData[carData.length-1];
 
