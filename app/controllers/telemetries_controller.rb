@@ -2,6 +2,8 @@ class TelemetriesController < ApplicationController
   respond_to :json
 
   def show
-    respond_with TempodbData.new(1.day.ago)
+    data = TempodbData.new(Time.parse(ENV["START_TIME"]))
+    Rails.logger.info(data)
+    respond_with data
   end
 end
