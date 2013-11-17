@@ -11,7 +11,7 @@ map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 
 var carData = [];
-var carPathLayer = null;
+var carPathLayer, routePathLayer;
 var carGeoJSON = { type: 'LineString', coordinates: [] };
 
 var locationIcon = L.icon({
@@ -28,7 +28,9 @@ var locationPulse = L.divIcon({
 
 var locationMarker, locationMarkerPulse;
 
-function getTelemetry() {
+function loadTelemetry() {
+  routePathLayer = L.geoJson(routeGeoJSON, { style: { weight: 6 } }).addTo(map);
+
   $.ajax({
     dataType: "json",
     url: "/telemetry"
@@ -52,4 +54,4 @@ function getTelemetry() {
     });
 }
 
-setTimeout(getTelemetry, 100);
+setTimeout(loadTelemetry, 100);
