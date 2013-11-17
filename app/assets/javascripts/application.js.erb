@@ -2,7 +2,19 @@
 //= require jquery_ujs
 //= require_tree .
 
-var map = L.mapbox.map('map', 'timdorr.g9a9eko1', {zoomControl: false});
+var map = L.mapbox.map('map', {
+    tilejson:    "2.0.0",
+    bounds:      [-180,-85,180,85],
+    center:      [-77.67333984375,38.565347844885466,6],
+    data:        ["http://a.tiles.mapbox.com/v3/timdorr.g9a9eko1/markers.geojsonp"],
+    id:          "timdorr.g9a9eko1",
+    maxzoom:     6,
+    minzoom:     6,
+    name:        "Tesla Trip",
+    private:     true,
+    scheme:      "xyz",
+    tiles:       ["/assets/tiles/{z}/{x}/{y}.png"]
+} , {zoomControl: false});
 
 map.dragging.disable();
 map.touchZoom.disable();
