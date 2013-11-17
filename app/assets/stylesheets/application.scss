@@ -20,6 +20,30 @@ body {
   z-index: -1;
 }
 
+.loading {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+
+  .spinner {
+    $image: "loading.gif";
+    display: block;
+    float: left;
+    background-image: image-url($image);
+    background-size: image-width($image) image-height($image);
+    width: image-width($image);
+    height: image-height($image);
+  }
+
+  p {
+    float: left;
+    margin: 0px 10px 0px;
+    font-weight: 300;
+    line-height: 30px;
+    text-shadow: 0px 1px 8px rgba(0,0,0,0.25);
+  }
+}
+
 .location-pulse .pulse {
   position: relative;
   top: 1px;

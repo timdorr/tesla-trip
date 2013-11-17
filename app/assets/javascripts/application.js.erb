@@ -22,31 +22,31 @@ map.doubleClickZoom.disable();
 map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 
-var carData = [];
-var carPathLayer, routePathLayer;
-var carGeoJSON = { type: 'LineString', coordinates: [] };
-
 var locationIcon = L.icon({
   iconUrl:    "<%= asset_path("bluedot.png") %>",
   iconSize:   [17, 17],
   iconAnchor: [8,  8],
   className:  "location-icon"
 });
+
 var locationPulse = L.divIcon({
   iconSize:  [50, 50],
   className: "location-pulse",
   html:      "<div class='pulse'></div>"
 });
 
+var carData = [], stateData = [];
+var carPathLayer, routePathLayer;
+var carGeoJSON = { type: 'LineString', coordinates: [] };
+
 var locationMarker, locationMarkerPulse;
 
 function loadTelemetry() {
   routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
 
-  $.ajax({
-    dataType: "json",
-    url: "/telemetry"
-  }).done(function(response){
+  // Progress Route
+  $.ajax({ dataType: "json", url: "/telemetry" })
+    .done(function(response){
       carData = response.data;
       var length = carData.length;
 
@@ -56,14 +56,31 @@ function loadTelemetry() {
 
       carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#7e3700", weight: 3, dashArray: "5,10" } }).addTo(map);
 
-      var lastLocation = carData[carData.length-1];
+      progressLoaded = true;
+      checkLoading();
+    });
 
-      locationMarkerPulse = L.marker([lastLocation.lat, lastLocation.lng], { icon: locationPulse });
+  // Current state & location
+  $.ajax({ dataType: "json", url: "/telemetry/state" })
+    .done(function(response){
+      stateData = response;
+
+      locationMarkerPulse = L.marker([stateData.latitude, stateData.longitude], { icon: locationPulse });
       locationMarkerPulse.addTo(map);
 
-      locationMarker = L.marker([lastLocation.lat, lastLocation.lng], { icon: locationIcon  });
+      locationMarker = L.marker([stateData.latitude, stateData.longitude], { icon: locationIcon });
       locationMarker.addTo(map);
+
+      stateLoaded = true;
+      checkLoading();
     });
+}
+
+var progressLoaded = false;
+var stateLoaded = false;
+
+function checkLoading() {
+  if (progressLoaded && stateLoaded) $(".loading").fadeOut();
 }
 
 setTimeout(loadTelemetry, 100);
