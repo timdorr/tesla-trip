@@ -5,6 +5,7 @@ gem 'rails', '~> 4.0.1'
 
 # Backend
 gem 'pg'
+gem 'redis'
 gem 'puma'
 gem 'figaro'
 
