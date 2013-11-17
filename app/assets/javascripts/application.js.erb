@@ -14,6 +14,20 @@ var carData = [];
 var carPathLayer = null;
 var carGeoJSON = { type: 'LineString', coordinates: [] };
 
+var locationIcon = L.icon({
+  iconUrl:    "<%= asset_path("bluedot.png") %>",
+  iconSize:   [17, 17],
+  iconAnchor: [8,  8],
+  className:  "location-icon"
+});
+var locationPulse = L.divIcon({
+  iconSize:  [50, 50],
+  className: "location-pulse",
+  html:      "<div class='pulse'></div>"
+});
+
+var locationMarker, locationMarkerPulse;
+
 function getTelemetry() {
   $.ajax({
     dataType: "json",
@@ -27,6 +41,14 @@ function getTelemetry() {
       }
 
       carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#0f9727", weight: 3, dashArray: "5,10" } }).addTo(map);
+
+      var lastLocation = carData[carData.length-1];
+
+      locationMarkerPulse = L.marker([lastLocation.lat, lastLocation.lng], { icon: locationPulse });
+      locationMarkerPulse.addTo(map);
+
+      locationMarker = L.marker([lastLocation.lat, lastLocation.lng], { icon: locationIcon  });
+      locationMarker.addTo(map);
     });
 }
 
