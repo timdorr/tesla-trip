@@ -2,19 +2,21 @@
 //= require jquery_ujs
 //= require_tree .
 
-var map = L.mapbox.map('map', {
-    tilejson:    "2.0.0",
-    bounds:      [-180,-85,180,85],
-    center:      [-77.67333984375,38.565347844885466,6],
-    data:        ["http://a.tiles.mapbox.com/v3/timdorr.g9a9eko1/markers.geojsonp"],
-    id:          "timdorr.g9a9eko1",
-    maxzoom:     6,
-    minzoom:     6,
-    name:        "Tesla Trip",
-    private:     true,
-    scheme:      "xyz",
-    tiles:       ["/tiles/{z}/{x}/{y}.png"]
-} , {zoomControl: false});
+var tileJson = {
+  tilejson:    "2.0.0",
+  bounds:      [-180,-85,180,85],
+  center:      [-77, 38, 6],
+  data:        ["http://a.tiles.mapbox.com/v3/timdorr.g9a9eko1/markers.geojsonp"],
+  id:          "timdorr.g9a9eko1",
+  maxzoom:     6,
+  minzoom:     6,
+  name:        "Tesla Trip",
+  private:     true,
+  scheme:      "xyz",
+  tiles:       ["/tiles/{z}/{x}/{y}.png"]
+};
+
+var map = L.mapbox.map('map', tileJson, {zoomControl: false});
 
 map.dragging.disable();
 map.touchZoom.disable();
@@ -39,7 +41,11 @@ var carData = [], stateData = [];
 var carPathLayer, routePathLayer;
 var carGeoJSON = { type: 'LineString', coordinates: [] };
 
-var locationMarker, locationMarkerPulse;
+var locationMarker      = L.marker([103, -89], { icon: locationIcon  });
+var locationMarkerPulse = L.marker([103, -89], { icon: locationPulse });
+
+locationMarkerPulse.addTo(map);
+locationMarker.addTo(map);
 
 function loadTelemetry() {
   routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
@@ -64,11 +70,8 @@ function fetchState() {
   $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(response) {
     stateData = response;
 
-    locationMarkerPulse = L.marker([stateData.latitude, stateData.longitude], { icon: locationPulse });
-    locationMarkerPulse.addTo(map);
-
-    locationMarker = L.marker([stateData.latitude, stateData.longitude], { icon: locationIcon });
-    locationMarker.addTo(map);
+    locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
+    locationMarker.setLatLng([stateData.latitude, stateData.longitude]);
 
     var stateDiv = $("#state");
 
@@ -99,14 +102,18 @@ function fetchState() {
 
     stateLoaded = true;
     checkLoading();
+
+    setTimeout(fetchState, 30*1000);
   });
 }
 
 var progressLoaded = false;
 var stateLoaded = false;
+var statsLoaded = false;
 
 function checkLoading() {
-  if (progressLoaded && stateLoaded) {
+  if (progressLoaded && stateLoaded && !statsLoaded) {
+    statsLoaded = true;
     $(".loading").fadeOut();
     $("#state").addClass("fadein");
   }
