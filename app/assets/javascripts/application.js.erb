@@ -45,42 +45,71 @@ function loadTelemetry() {
   routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
 
   // Progress Route
-  $.ajax({ dataType: "json", url: "/telemetry" })
-    .done(function(response){
-      carData = response.data;
-      var length = carData.length;
+  $.ajax({ dataType: "json", url: "/telemetry" }).done(function(response) {
+    carData = response.data;
+    var length = carData.length;
 
-      for (var i = 0; i < length; i++) {
-        carGeoJSON.coordinates.push([carData[i].lng, carData[i].lat]);
-      }
+    for (var i = 0; i < length; i++) {
+      carGeoJSON.coordinates.push([carData[i].lng, carData[i].lat]);
+    }
 
-      carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#7e3700", weight: 3, dashArray: "5,10" } }).addTo(map);
+    carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#7e3700", weight: 3, dashArray: "5,10" } }).addTo(map);
 
-      progressLoaded = true;
-      checkLoading();
-    });
+    progressLoaded = true;
+    checkLoading();
+  });
 
   // Current state & location
-  $.ajax({ dataType: "json", url: "/telemetry/state" })
-    .done(function(response){
-      stateData = response;
+  $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(response) {
+    stateData = response;
 
-      locationMarkerPulse = L.marker([stateData.latitude, stateData.longitude], { icon: locationPulse });
-      locationMarkerPulse.addTo(map);
+    locationMarkerPulse = L.marker([stateData.latitude, stateData.longitude], { icon: locationPulse });
+    locationMarkerPulse.addTo(map);
 
-      locationMarker = L.marker([stateData.latitude, stateData.longitude], { icon: locationIcon });
-      locationMarker.addTo(map);
+    locationMarker = L.marker([stateData.latitude, stateData.longitude], { icon: locationIcon });
+    locationMarker.addTo(map);
 
-      stateLoaded = true;
-      checkLoading();
-    });
+    stateLoaded = true;
+
+    var stateDiv = $("#state");
+
+    // Status
+    if (stateData.shift_state == "P" || stateData.shift_state == null) stateDiv.find(".parked").removeClass("hide");
+    else stateDiv.find(".driving").removeClass("hide");
+
+    if (stateData.charging_state == "Complete" || stateData.charging_state == "Charging") stateDiv.find(".charging").removeClass("hide");
+    else stateDiv.find(".battery").removeClass("hide");
+
+    // Driving
+    stateDiv.find(".lat dd").text(stateData.latitude);
+    stateDiv.find(".lng dd").text(stateData.longitude);
+    stateDiv.find(".speed dd").text((stateData.speed || 0)+" MPH");
+
+    // Charging
+    stateDiv.find(".charge_rate dd").text(stateData.charge_rate+" MPH");
+    stateDiv.find(".time_to_full dd").text(stateData.time_to_full_charge+" hours");
+    stateDiv.find(".battery_level dd").text(stateData.battery_level+"%");
+    stateDiv.find(".range dd").text(stateData.battery_range + " miles");
+
+    // Climate
+    if (stateData.outside_temp == null) stateDiv.find(".outside_temp").hide();
+    else stateDiv.find(".outside_temp dd").text(Math.round((stateData.outside_temp * (9/5))+32)+"º");
+    if (stateData.inside_temp == null) stateDiv.find(".inside_temp").hide();
+    else stateDiv.find(".inside_temp dd").text(Math.round((stateData.inside_temp * (9/5))+32)+"º");
+    if (stateData.outside_temp == null && stateData.inside_temp == null) stateDiv.find(".climate").hide();
+
+    checkLoading();
+  });
 }
 
 var progressLoaded = false;
 var stateLoaded = false;
 
 function checkLoading() {
-  if (progressLoaded && stateLoaded) $(".loading").fadeOut();
+  if (progressLoaded && stateLoaded) {
+    $(".loading").fadeOut();
+    $("#state").addClass("fadein");
+  }
 }
 
 setTimeout(loadTelemetry, 100);

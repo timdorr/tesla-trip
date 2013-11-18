@@ -2,4 +2,66 @@
   .spinner
   p Loading telemetry...
 
+.state#state
+  h4 Current Stats
+
+  .parked.hide
+    .header
+    dl.dl-horizontal
+      .lat
+        dt Latitude
+        dd
+      .lng
+        dt Longitude
+        dd
+  .driving.hide
+    .header
+    dl.dl-horizontal
+      .lat
+        dt Latitude
+        dd
+      .lng
+        dt Longitude
+        dd
+      .speed
+        dt Speed
+        dd
+
+  .charging.hide
+    .header
+    dl.dl-horizontal
+      .charge_rate
+        dt Charge Rate
+        dd
+      .time_to_full
+        dt Time To Full
+        dd
+      .battery_level
+        dt Battery Level
+        dd
+      .range
+        dt Range (Rated)
+        dd
+
+  .battery.hide
+    .header
+    dl.dl-horizontal
+      .battery_level
+        dt Battery Level
+        dd
+      .range
+        dt Range (Rated)
+        dd
+
+  .climate
+    .header
+    dl.dl-horizontal
+      .outside_temp
+        dt Outside Temp
+        dd
+      .inside_temp
+        dt Inside Temp
+        dd
+
+
 .map#map
