@@ -44,9 +44,11 @@ var locationMarkerPulse = L.marker([103, -89], { icon: locationPulse });
 locationMarkerPulse.addTo(map);
 locationMarker.addTo(map);
 
-function loadTelemetry() {
+function addRouteLayer() {
   routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
+}
 
+function loadTelemetry() {
   $.ajax({ dataType: "json", url: "/telemetry" }).done(function(response) {
     carData = response.data;
     var length = carData.length;
@@ -116,5 +118,10 @@ function checkLoading() {
   }
 }
 
-setTimeout(loadTelemetry, 100);
-setTimeout(fetchState, 100);
+$(function() {
+  addRouteLayer();
+  if ($(".loading").length == 1) {
+    loadTelemetry();
+    fetchState();
+  }
+});
