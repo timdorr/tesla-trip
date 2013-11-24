@@ -75,11 +75,11 @@ function fetchState() {
     var stateDiv = $("#state");
 
     // Status
-    if (stateData.shift_state == "P" || stateData.shift_state == null) stateDiv.find(".parked").removeClass("hide");
-    else stateDiv.find(".driving").removeClass("hide");
+    stateDiv.find(".driving").toggleClass("hide", (stateData.shift_state == "P" || stateData.shift_state == null));
+    stateDiv.find(".parked").toggleClass("hide", !(stateData.shift_state == "P" || stateData.shift_state == null));
 
-    if (stateData.charging_state == "Charging") stateDiv.find(".charging").removeClass("hide");
-    else stateDiv.find(".battery").removeClass("hide");
+    stateDiv.find(".charging").toggleClass("hide", !(stateData.charging_state == "Charging"));
+    stateDiv.find(".battery").toggleClass("hide", (stateData.charging_state == "Charging"));
 
     // Driving
     stateDiv.find(".lat dd").text(stateData.latitude);
