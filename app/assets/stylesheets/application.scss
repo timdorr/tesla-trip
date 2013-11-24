@@ -3,7 +3,8 @@
  *= require_tree .
  */
 
-@import "compass";
+@import "compass/css3/images";
+@import "compass/css3/transform";
 @import "bootstrap";
 
 @import "mixins";
