@@ -38,6 +38,9 @@ GEM
       sass (~> 3.2)
     builder (3.1.4)
     chunky_png (1.2.9)
+    clockwork (0.7.0)
+      activesupport
+      tzinfo (~> 0.3.35)
     coderay (1.1.0)
     compass (0.12.2)
       chunky_png (~> 1.2)
@@ -188,6 +191,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.0.0.0)
+  clockwork
   compass-rails (~> 2.0.alpha.0)
   database_cleaner
   em-http-request
