@@ -13,7 +13,7 @@ class TeslaApi
             "user_session[email]" => email,
             "user_session[password]" => password
         },
-        headers: {'Cookie' => response.headers['Set-Cookie']}
+        headers: {'Cookie' => response.headers.fetch('Set-Cookie',"")}
     )
     self.class.headers 'Cookie' => response.request.options[:headers].fetch('Cookie', "")
   end
