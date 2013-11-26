@@ -5,6 +5,7 @@ class TeslaApi
 
   def initialize(email, password)
     @email = email
+    self.class.headers 'Cookie' => ""
     response = self.class.get('/login')
     response = self.class.post(
         '/login',
@@ -14,7 +15,7 @@ class TeslaApi
         },
         headers: {'Cookie' => response.headers['Set-Cookie']}
     )
-    self.class.headers 'Cookie' => response.request.options[:headers]['Cookie']
+    self.class.headers 'Cookie' => response.request.options[:headers].fetch('Cookie', "")
   end
 
   def vehicles
