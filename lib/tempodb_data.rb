@@ -1,7 +1,7 @@
 class TempodbData
   def initialize(start, stop = Time.now)
     @data = []
-    tempo_data = $tempodb.read(start, stop, keys: series_keys)
+    tempo_data = $tempodb.read(start, stop, keys: series_keys, interval: "1min", function: "mean")
 
     tempo_data = Hash[tempo_data.map{|set| [set.series.key.to_sym, set.data]}]
 
