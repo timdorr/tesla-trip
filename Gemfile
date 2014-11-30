@@ -9,7 +9,7 @@ gem 'pg'
 gem 'redis'
 gem 'puma'
 gem 'foreman', '~> 0.63.0', require: false
-gem 'dotenv'
+gem 'dotenv-rails'
 
 # Influx DB
 gem 'influxdb'
