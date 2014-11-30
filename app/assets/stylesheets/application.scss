@@ -1,10 +1,10 @@
 /*
  *= require_self
- *= require_tree .
  */
 
-@import "compass/css3/images";
-@import "compass/css3/transform";
+@import "bourbon";
+
+@import "bootstrap-sprockets";
 @import "bootstrap";
 
 @import "mixins";
