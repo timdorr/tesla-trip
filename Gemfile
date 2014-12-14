@@ -64,3 +64,6 @@ gem 'em-http-request'
 
 # Jerbs
 gem 'clockwork'
+
+# Google
+gem 'polylines'
