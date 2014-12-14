@@ -49,8 +49,7 @@ function addRouteLayer() {
 }
 
 function loadTelemetry() {
-  $.ajax({ dataType: "json", url: "/telemetry" }).done(function(response) {
-    carData = response.data;
+  $.ajax({ dataType: "json", url: "/telemetry" }).done(function(carData) {
     var length = carData.length;
 
     for (var i = 0; i < length; i++) {
@@ -66,9 +65,7 @@ function loadTelemetry() {
 
 function fetchState() {
   // Current state & location
-  $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(response) {
-    stateData = response;
-
+  $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(stateData) {
     locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
     locationMarker.setLatLng([stateData.latitude, stateData.longitude]);
 
