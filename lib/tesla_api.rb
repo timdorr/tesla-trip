@@ -134,7 +134,7 @@ class TeslaApi
       EventMachine.run do
         request = EventMachine::HttpRequest.new(
             "https://streaming.vn.teslamotors.com/stream/#{self["vehicle_id"]}/" +
-                "?values=speed,odometer,soc,elevation,est_heading,est_lat,est_lng,power")
+            "?values=speed,odometer,soc,elevation,est_heading,est_lat,est_lng,power")
 
         http = request.get(
             head: {
@@ -148,20 +148,20 @@ class TeslaApi
         http.stream do |chunk|
           attributes = chunk.split(",")
           reciever.call({
-                            time: DateTime.strptime((attributes[0].to_i/1000).to_s, "%s"),
-                            speed: attributes[1].to_f,
-                            odometer: attributes[2].to_f,
-                            soc: attributes[3].to_f,
-                            elevation: attributes[4].to_f,
-                            est_heading: attributes[5].to_f,
-                            est_lat: attributes[6].to_f,
-                            est_lng: attributes[7].to_f,
-                            power: attributes[8].to_f
+             time:        DateTime.strptime((attributes[0].to_i/1000).to_s, "%s"),
+             speed:       attributes[1].to_f,
+             odometer:    attributes[2].to_f,
+             soc:         attributes[3].to_f,
+             elevation:   attributes[4].to_f,
+             est_heading: attributes[5].to_f,
+             est_lat:     attributes[6].to_f,
+             est_lng:     attributes[7].to_f,
+             power:       attributes[8].to_f
                         })
         end
 
         http.callback { EventMachine.stop }
-        http.errback { EventMachine.stop }
+        http.errback  { EventMachine.stop }
       end
     end
   end
