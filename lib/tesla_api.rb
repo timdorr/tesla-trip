@@ -39,27 +39,27 @@ class TeslaApi
     # State
 
     def mobile_enabled
-      api.get("/vehicles/#{id}/mobile_enabled")["result"]
+      api.get("/vehicles/#{id}/mobile_enabled")["response"]
     end
 
     def charge_state
-      api.get("/vehicles/#{id}/data_request/charge_state")
+      api.get("/vehicles/#{id}/data_request/charge_state")["response"]
     end
 
     def climate_state
-      api.get("/vehicles/#{id}/data_request/climate_state")
+      api.get("/vehicles/#{id}/data_request/climate_state")["response"]
     end
 
     def drive_state
-      api.get("/vehicles/#{id}/data_request/drive_state")
+      api.get("/vehicles/#{id}/data_request/drive_state")["response"]
     end
 
     def gui_settings
-      api.get("/vehicles/#{id}/data_request/gui_settings")
+      api.get("/vehicles/#{id}/data_request/gui_settings")["response"]
     end
 
     def vehicle_state
-      api.get("/vehicles/#{id}/data_request/vehicle_state")
+      api.get("/vehicles/#{id}/data_request/vehicle_state")["response"]
     end
 
     # Commands
