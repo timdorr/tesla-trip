@@ -58,9 +58,8 @@ gem 'bcrypt-ruby', '~> 3.0.0'
 # JSON
 gem 'oj'
 
-# API stuff
-gem 'httparty'
-gem 'em-http-request'
+# Tesla
+gem 'tesla_api'
 
 # Jerbs
 gem 'clockwork'

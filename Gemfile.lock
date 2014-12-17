@@ -186,6 +186,9 @@ GEM
       activesupport (>= 3.0)
       sprockets (>= 2.8, < 4.0)
     temple (0.6.10)
+    tesla_api (1.0.0)
+      em-http-request
+      httparty
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -210,11 +213,9 @@ DEPENDENCIES
   clockwork
   database_cleaner
   dotenv-rails
-  em-http-request
   factory_girl_rails
   foreman (~> 0.63.0)
   handlebars_assets
-  httparty
   influxdb
   jquery-rails
   meta_request
@@ -234,5 +235,6 @@ DEPENDENCIES
   slim-rails (~> 2.0)
   spring
   spring-commands-rspec
+  tesla_api
   therubyracer (~> 0.12.1)
   uglifier (>= 2.4.0)
