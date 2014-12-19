@@ -1,6 +1,6 @@
 class DataCache
   def self.telemetry
-    telematics = InfluxdbData.new.telematics(Time.parse(ENV["START_TIME"]))
+    telematics = InfluxdbData.new.telematics(Time.parse(ENV["START_TIME"]), Time.parse(ENV["END_TIME"]))
     telemetry = telematics.map { |t| {lat: t["est_lat"], lng: t["est_lng"]} }
     $redis.set("car-telemetry", telemetry.to_json)
   end
