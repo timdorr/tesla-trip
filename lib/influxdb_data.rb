@@ -1,6 +1,5 @@
 class InfluxdbData
   def telematics(start, stop = Time.now)
-    puts "time > #{start.to_i}s AND time < #{stop.to_i}s"
     @telemetry ||= $influxdb.query("
       SELECT #{select_fields}
       FROM telematics
