@@ -10,7 +10,26 @@ class DataCache
     tesla_api = TeslaApi::Client.new(ENV["TESLA_EMAIL"], ENV["TESLA_PASS"], ENV["TESLA_CLIENT_ID"], ENV["TESLA_CLIENT_SECRET"])
     ms = tesla_api.vehicles.first
     return if ms.state != "online"
-    state = ms.charge_state.merge(ms.drive_state).merge(ms.climate_state).to_json
-    $redis.set("car-state", state)
+
+    puts "getting charge state"
+    charge_state = ms.charge_state rescue nil
+    if charge_state.present?
+      car_state = JSON.parse($redis.get("car-state")) || {}
+      $redis.set("car-state", car_state.merge(charge_state).to_json)
+    end
+
+    puts "getting drive state"
+    drive_state = ms.drive_state rescue nil
+    if drive_state.present?
+      car_state = JSON.parse($redis.get("car-state")) || {}
+      $redis.set("car-state", car_state.merge(drive_state).to_json)
+    end
+
+    puts "getting climate state"
+    climate_state = ms.climate_state rescue nil
+    if climate_state.present?
+      car_state = JSON.parse($redis.get("car-state")) || {}
+      $redis.set("car-state", car_state.merge(climate_state).to_json)
+    end
   end
 end
