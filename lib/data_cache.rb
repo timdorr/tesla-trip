@@ -4,6 +4,9 @@ class DataCache
     return if telematics.blank?
     telemetry = telematics.map { |t| {lat: t["est_lat"], lng: t["est_lng"]} }
     $redis.set("car-telemetry", telemetry.to_json)
+
+    car_state = JSON.parse($redis.get("car-state")) || {}
+    $redis.set("car-state", car_state.merge(InfluxdbData.new.latest_state).to_json)
   end
 
   def self.state

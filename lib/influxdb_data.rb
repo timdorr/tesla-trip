@@ -8,6 +8,10 @@ class InfluxdbData
     )["telematics"]
   end
 
+  def latest_state
+    @latest ||= map_stream_to_state($influxdb.query("SELECT * FROM telematics LIMIT 1")["telematics"].first)
+  end
+
   private
 
   def select_fields
@@ -16,5 +20,14 @@ class InfluxdbData
 
   def series_keys
     %w(odometer speed est_lat est_lng soc power)
+  end
+
+  def map_stream_to_state(stream)
+    {
+        "latitude" => stream["est_lat"],
+        "longitude" => stream["est_lng"],
+        "battery_level" => stream["soc"],
+        "speed" => stream["speed"]
+    }
   end
 end
