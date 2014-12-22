@@ -10,6 +10,7 @@ class DataCache
   end
 
   def self.state
+    TeslaApi::Client.debug_output
     tesla_api = TeslaApi::Client.new(ENV["TESLA_EMAIL"], ENV["TESLA_PASS"], ENV["TESLA_CLIENT_ID"], ENV["TESLA_CLIENT_SECRET"])
     ms = tesla_api.vehicles.first
     return if ms.state != "online"
