@@ -7,5 +7,5 @@
 //= require_tree .
 
 Handlebars.registerHelper('timeAgo', function(data) {
-  return moment(data).fromNow();
+  return moment(data, "YYYY-MM-DD H:m:s Z").fromNow();
 });
