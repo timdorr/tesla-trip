@@ -10,9 +10,21 @@ class DataCache
   end
 
   def self.state
-    TeslaApi::Client.debug_output
-    tesla_api = TeslaApi::Client.new(ENV["TESLA_EMAIL"], ENV["TESLA_PASS"], ENV["TESLA_CLIENT_ID"], ENV["TESLA_CLIENT_SECRET"])
-    ms = tesla_api.vehicles.first
+    tesla_api = TeslaApi::Client.new(ENV["TESLA_EMAIL"], ENV["TESLA_CLIENT_ID"], ENV["TESLA_CLIENT_SECRET"])
+    if token = $redis.get("tesla-token")
+      tesla_api.token = token
+    else
+      tesla_api.login!(ENV["TESLA_PASS"])
+      $redis.set("tesla-token", tesla_api.token)
+    end
+
+    if vehicle = $redis.get("tesla-vehicle")
+      vehicle = JSON.parse(vehicle)
+      ms = TeslaApi::Vehicle.new(tesla_api.class, tesla_api.email, vehicle["id"], vehicle)
+    else
+      ms = tesla_api.vehicles.first
+      $redis.set("tesla-vehicle", ms.vehicle.to_json)
+    end
     return if ms.state != "online"
 
     puts "getting charge state"
