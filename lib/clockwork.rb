@@ -8,5 +8,5 @@ module Clockwork
   end
 
   every(1.minute,   'Refresh Telemetry Cache') { DataCache.telemetry }
-  every(60.seconds, 'Refresh Car State Cache') { `rake tesla:refresh_state` }
+  every(40.seconds, 'Refresh Car State Cache') { DataCache.state }
 end
