@@ -1,5 +1,3 @@
-L.mapbox.accessToken = "<%= ENV["MAPBOX_TOKEN"] %>";
-
 var tileJson = {
   tilejson:    "2.0.0",
   bounds:      [-180,-85,180,85],
@@ -23,7 +21,7 @@ map.scrollWheelZoom.disable();
 if (map.tap) map.tap.disable();
 
 var locationIcon = L.icon({
-  iconUrl:    "<%= asset_path("bluedot.png") %>",
+  iconUrl:    "<%= asset_path('bluedot.png') %>",
   iconSize:   [17, 17],
   iconAnchor: [8,  8],
   className:  "location-icon"
@@ -45,11 +43,23 @@ var locationMarkerPulse = L.marker([103, -89], { icon: locationPulse });
 locationMarkerPulse.addTo(map);
 locationMarker.addTo(map);
 
-function addRouteLayer() {
-  routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
-}
+var progressLoaded = false;
+var stateLoaded = false;
+var statsLoaded = false;
 
-function loadTelemetry() {
+var checkLoading = function() {
+  if (progressLoaded && stateLoaded && !statsLoaded) {
+    statsLoaded = true;
+    $(".loading").fadeOut();
+    $("#state").addClass("fadein");
+  }
+};
+
+var addRouteLayer = function() {
+  routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
+};
+
+var loadTelemetry = function() {
   $.ajax({ dataType: "json", url: "/telemetry" }).done(function(carData) {
     var length = carData.length;
 
@@ -62,9 +72,9 @@ function loadTelemetry() {
     progressLoaded = true;
     checkLoading();
   });
-}
+};
 
-function fetchState() {
+var fetchState = function() {
   // Current state & location
   $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(stateData) {
     locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
@@ -102,24 +112,33 @@ function fetchState() {
 
     setTimeout(fetchState, 30*1000);
   });
-}
+};
 
-var progressLoaded = false;
-var stateLoaded = false;
-var statsLoaded = false;
+var socket;
 
-function checkLoading() {
-  if (progressLoaded && stateLoaded && !statsLoaded) {
-    statsLoaded = true;
-    $(".loading").fadeOut();
-    $("#state").addClass("fadein");
-  }
-}
+var connectSocket = function() {
+  socket = new WebSocket(socket_url);
+  socket.onmessage = function(event) {
+    var stateData = JSON.parse(event.data);
+    var stateDiv = $("#state");
+
+    locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
+    locationMarker.setLatLng([stateData.latitude, stateData.longitude]);
+
+    stateDiv.find(".lat dd").text(stateData.latitude);
+    stateDiv.find(".lng dd").text(stateData.longitude);
+    stateDiv.find(".speed dd").text((stateData.speed || 0) + " MPH");
+    stateDiv.find(".battery_level dd").text(stateData.battery_level + "%");
+
+    console.log(stateData);
+  };
+};
 
 $(function() {
   addRouteLayer();
   if ($(".loading").length == 1) {
     loadTelemetry();
     fetchState();
+    connectSocket();
   }
 });

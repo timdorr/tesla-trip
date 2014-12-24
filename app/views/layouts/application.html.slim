@@ -37,4 +37,8 @@ html
     = yield
 
     script src='//api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'
+    javascript:
+      L.mapbox.accessToken = "#{ENV['MAPBOX_TOKEN']}";
+      var socket_url = "ws://#{request.host_with_port}";
+
     = javascript_include_tag "application"
