@@ -66,3 +66,6 @@ gem 'clockwork'
 
 # Google
 gem 'polylines'
+
+# Sockets
+gem 'faye-websocket', '~> 0.9'
