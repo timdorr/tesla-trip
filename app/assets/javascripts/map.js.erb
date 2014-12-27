@@ -129,8 +129,6 @@ var connectSocket = function() {
     stateDiv.find(".lng dd").text(stateData.longitude);
     stateDiv.find(".speed dd").text((stateData.speed || 0) + " MPH");
     stateDiv.find(".battery_level dd").text(stateData.battery_level + "%");
-
-    console.log(stateData);
   };
 };
 
