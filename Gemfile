@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '2.1.5'
+ruby '2.2.2'
 
-gem 'rails', '4.1.8'
+gem 'rails', '4.1.10'
 
 # Backend
 gem 'pg'
@@ -33,8 +33,7 @@ gem 'momentjs-rails'
 
 # Development Tools
 group :development, :test do
-  gem 'rspec', '~> 2.14.1'
-  gem 'rspec-rails', '~> 2.14.2'
+  gem 'rspec-rails', '~> 3.2.0'
   gem 'factory_girl_rails'
 end
 
