@@ -2,13 +2,13 @@ source 'https://rubygems.org'
 
 ruby '2.2.3'
 
-gem 'rails', '4.1.10'
+gem 'rails', '4.1.14'
 
 # Backend
 gem 'pg'
 gem 'redis'
 gem 'puma'
-gem 'foreman', '~> 0.63.0', require: false
+gem 'foreman', require: false
 gem 'dotenv-rails'
 
 # Influx DB
@@ -18,7 +18,7 @@ gem 'influxdb'
 gem 'rails_12factor', group: :production
 
 # Asset pipeline
-gem 'sass-rails', '5.0.0.beta1'
+gem 'sass-rails', '~> 5.0.0'
 gem 'slim-rails', '~> 2.0'
 gem 'uglifier', '>= 2.4.0'
 gem 'therubyracer', '~> 0.12.1'
