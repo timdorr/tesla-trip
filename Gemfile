@@ -18,7 +18,7 @@ gem 'influxdb'
 gem 'rails_12factor', group: :production
 
 # Asset pipeline
-gem 'sass-rails', '~> 5.0.0'
+gem 'sassc-rails', '~> 1.1.0'
 gem 'slim-rails', '~> 2.0'
 gem 'uglifier', '>= 2.4.0'
 gem 'therubyracer', '~> 0.12.1'
