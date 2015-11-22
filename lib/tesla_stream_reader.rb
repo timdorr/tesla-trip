@@ -18,6 +18,9 @@ class TeslaStreamReader
         write_to_socket(state)
       end
       puts "Stream closed!"
+
+      @tesla_api = nil
+      @car = nil
     end
   end
 
