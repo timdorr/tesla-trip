@@ -108,7 +108,6 @@ GEM
       rack-contrib (~> 1.1)
       railties (>= 3.0.0, < 5.0.0)
     mime-types (2.6.2)
-    mini_magick (4.3.6)
     minitest (5.8.3)
     momentjs-rails (2.10.6)
       railties (>= 3.1)
@@ -167,10 +166,6 @@ GEM
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
     sass (3.4.19)
-    sass-images (0.0.2)
-      mime-types
-      mini_magick
-      sass
     sassc (1.8.1)
       bundler
       ffi (~> 1.9.6)
@@ -246,7 +241,6 @@ DEPENDENCIES
   rails_12factor
   redis
   rspec-rails (~> 3.2.0)
-  sass-images
   sassc-rails (~> 1.1.0)
   slim-rails (~> 2.0)
   spring

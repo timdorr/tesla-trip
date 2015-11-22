@@ -70,12 +70,14 @@ h1, h2, h3, h4, h5, h6 {
 
   .spinner {
     $image: "loading.gif";
+    $image-width: 30px;
+    $image-height: 30px;
     display: block;
     float: left;
     background-image: image-url($image);
-    background-size: image-width($image) image-height($image);
-    width: image-width($image);
-    height: image-height($image);
+    background-size: $image-width $image-height;
+    width: $image-width;
+    height: $image-height;
   }
 
   p {
@@ -185,11 +187,14 @@ h1, h2, h3, h4, h5, h6 {
     padding: 10px 20px;
   }
 
-  .parked   .header { @include background-img("header.parked.jpg"); }
-  .driving  .header { @include background-img("header.driving.jpg"); }
-  .charging .header { @include background-img("header.charging.jpg"); }
-  .battery  .header { @include background-img("header.battery.jpg"); }
-  .climate  .header { @include background-img("header.climate.jpg"); }
+  $image-width: 600px;
+  $image-height: 100px;
+
+  .parked   .header { @include background-img("header.parked.jpg",   $image-width, $image-height); }
+  .driving  .header { @include background-img("header.driving.jpg",  $image-width, $image-height); }
+  .charging .header { @include background-img("header.charging.jpg", $image-width, $image-height); }
+  .battery  .header { @include background-img("header.battery.jpg",  $image-width, $image-height); }
+  .climate  .header { @include background-img("header.climate.jpg",  $image-width, $image-height); }
 
   dl {
     margin: 0;

@@ -1,4 +1,7 @@
-@mixin background-img($image, $width: image-width($image)/2, $height: image-height($image)/2 ) {
+@mixin background-img($image, $image-width, $image-height) {
+  $width: $image-width/2;
+  $height: $image-height/2;
+
   display: block;
   background-image: image-url($image);
   background-size: $width $height;

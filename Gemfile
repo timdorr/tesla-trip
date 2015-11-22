@@ -27,7 +27,6 @@ gem 'therubyracer', '~> 0.12.1'
 gem 'jquery-rails'
 gem 'bootstrap-sass', '~> 3.2'
 gem 'bourbon'
-gem 'sass-images'
 gem 'handlebars_assets'
 gem 'momentjs-rails'
 
