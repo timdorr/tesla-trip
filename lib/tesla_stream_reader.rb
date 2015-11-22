@@ -8,7 +8,8 @@ class TeslaStreamReader
       loop do
         puts "Waiting for car to come online..."
         break if car.state == "online"
-        sleep 1
+        @car = nil
+        sleep 5
       end
 
       puts "Car online! Streaming car telematics..."
@@ -41,7 +42,7 @@ class TeslaStreamReader
   end
 
   def car
-    @car ||= tesla_api.vehicles.first
+    tesla_api.vehicles.first
   end
 
   def write_to_influxdb(state)
