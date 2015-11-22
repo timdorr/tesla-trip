@@ -8,4 +8,10 @@ namespace :tesla do
   task refresh_state: :environment do
     DataCache.state
   end
+
+  desc "Streams telemetry to the datastore"
+  task stream: :environment do
+    puts "Loading up Tesla API Streamer..."
+    TeslaStreamReader.new.stream_to_influxdb
+  end
 end
