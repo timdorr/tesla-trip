@@ -14,7 +14,7 @@ class TelemetriesController < ApplicationController
   end
 
   def create
-    stream = JSON.parse(request.body.read)
+    stream = JSON.parse(stream_params[:state])
     $redis.publish(TeslaTrip::TelemetrySocket::CHANNEL, map_stream_to_state(stream).to_json)
     render json: {status: 'ok'}
   end
@@ -22,10 +22,14 @@ class TelemetriesController < ApplicationController
   private
 
   def ensure_authentication_token
-    if params[:api_token] != ENV['WS_TOKEN']
+    if stream_params[:api_token] != ENV['WS_TOKEN']
       render json: {error: 'Bad api token'}, status: :unauthorized
-      return false
+      false
     end
+  end
+
+  def stream_params
+    params.permit(:api_token, :state)
   end
 
   def map_stream_to_state(stream)
