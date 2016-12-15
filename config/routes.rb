@@ -3,8 +3,8 @@ TeslaTrip::Application.routes.draw do
     get :state
   end
 
-  get "map",   to: "pages#map"
-  get "intro", to: "pages#intro"
+  get 'map',   to: 'pages#map'
+  get 'intro', to: 'pages#intro'
 
-  root "pages#map"
+  root 'pages#map'
 end

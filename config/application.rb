@@ -1,14 +1,14 @@
 require_relative 'boot'
 
-require "rails"
+require 'rails'
 # Pick the frameworks you want:
-# require "active_model/railtie"
-# require "active_record/railtie"
-require "action_controller/railtie"
-require "action_view/railtie"
-require "sprockets/railtie"
-# require "action_mailer/railtie"
-# require "rails/test_unit/railtie"
+# require 'active_model/railtie'
+# require 'active_record/railtie'
+require 'action_controller/railtie'
+require 'action_view/railtie'
+require 'sprockets/railtie'
+# require 'action_mailer/railtie'
+# require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

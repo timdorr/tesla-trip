@@ -3,14 +3,14 @@ require 'faye/websocket'
 module TeslaTrip
   class TelemetrySocket
     KEEPALIVE_TIME = 15
-    CHANNEL = "tesla-websocket"
+    CHANNEL = 'tesla-websocket'
 
     def initialize(app)
       @app = app
       @clients = []
 
       Thread.new do
-        uri = URI.parse(ENV["REDIS_URL"])
+        uri = URI.parse(ENV['REDIS_URL'])
         redis_sub = Redis.new(host: uri.host, port: uri.port, password: uri.password)
         redis_sub.subscribe(CHANNEL) do |on|
           on.message do |channel, msg|
