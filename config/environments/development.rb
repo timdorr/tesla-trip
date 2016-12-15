@@ -27,5 +27,5 @@ TeslaTrip::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
-  Slim::Engine.set_default_options pretty: true, sort_attrs: false, format: :html5
+  Slim::Engine.set_options pretty: true, sort_attrs: false, format: :html
 end

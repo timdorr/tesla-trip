@@ -1,6 +1,6 @@
 class TelemetriesController < ApplicationController
   respond_to :json
-  before_filter :ensure_authentication_token, only: [:create]
+  before_action :ensure_authentication_token, only: [:create]
   protect_from_forgery with: :null_session
 
   def show
