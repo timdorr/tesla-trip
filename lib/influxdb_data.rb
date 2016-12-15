@@ -5,7 +5,7 @@ class InfluxdbData
       FROM telematics
       WHERE time > #{start.to_i}s AND time < #{stop.to_i}s
       GROUP BY time(1m) fill(none)"
-    ).first['values']
+    ).first.try(:[], 'values')
   end
 
   def latest_state
