@@ -5,7 +5,7 @@ namespace :google do
         "https://maps.googleapis.com/maps/api/directions/json",
         query: {
             key: ENV["GOOGLE_API_KEY"],
-            origin: "33.7925,-84.4005", # Start
+            origin: "33.980018,-84.46942", # Start
             waypoints:
                 "34.825893,-82.306952|" + # Greenville
                 "35.340750,-80.765790|" + # Charlotte
@@ -31,12 +31,13 @@ namespace :google do
                 "38.643325,-77.295840|" + # Woodbridge
                 "39.662408,-75.691880|" + # Newark
                 # "40.195407,-74.640843|" + # Hamilton Township
-                "40.322440,-74.486900|" + # Cranberry
+                # "40.322440,-74.486900|" + # Cranberry
+                "40.415938,-74.444713|" + # East Brunswick
                 # "40.548311,-74.333237|" + # Edison
                 # "40.957429,-74.074080|" + # Paramus
                 # "41.068167,-73.504659|" + # Darien
                 "41.041538,-73.671661|" + # Greenwich
-                "41.722672,-72.759717|" +  # West Hartford
+                # "41.722672,-72.759717|" +  # West Hartford
                 "42.203608,-71.832516",   # Auburn
             destination: "42.832,-71.295" # End
         })

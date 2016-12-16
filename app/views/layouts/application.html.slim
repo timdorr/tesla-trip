@@ -8,7 +8,7 @@ html
     link rel="shortcut icon" href="favicon.ico"
 
     = stylesheet_link_tag "application", media: "all"
-    link href='//api.mapbox.com/mapbox.js/v2.2.3/mapbox.css' rel='stylesheet'
+    link href='https://api.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.css' rel='stylesheet'
 
     script type="text/javascript" src="//use.typekit.net/xtx1paw.js"
     javascript:
@@ -36,9 +36,9 @@ html
 
     = yield
 
-    script src='//api.mapbox.com/mapbox.js/v2.2.3/mapbox.js'
+    script src='https://api.mapbox.com/mapbox-gl-js/v0.28.0/mapbox-gl.js'
     javascript:
-      L.mapbox.accessToken = "#{ENV['MAPBOX_TOKEN']}";
+      mapboxgl.accessToken = "#{ENV['MAPBOX_TOKEN']}";
       var socket_url = "ws://#{request.host_with_port}";
 
     = javascript_include_tag "application"

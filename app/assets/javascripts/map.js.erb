@@ -1,47 +1,25 @@
-var tileJson = {
-  tilejson:    "2.0.0",
-  bounds:      [-180,-85,180,85],
-  center:      [-77, 38, 6],
-  data:        ["https://a.tiles.mapbox.com/v4/timdorr.kg2lg26c/features.json?access_token="+L.mapbox.accessToken],
-  id:          "timdorr.kg2lg26c",
-  maxzoom:     6,
-  minzoom:     6,
-  name:        "Tesla Trip",
-  private:     true,
-  scheme:      "xyz",
-  tiles:       ["/tiles/{z}/{x}/{y}.png"]
-};
+var map = new mapboxgl.Map({
+  container: 'map',
+  style: 'http://cdn.showcaseidx.com/mapbox/streets-v9.nofonts.json',
+  center: [-77, 38]
+})
 
-var map = L.mapbox.map('map', tileJson, {zoomControl: false});
+var locationIcon = document.createElement('div')
+locationIcon.className = 'location-icon'
 
-map.dragging.disable();
-map.touchZoom.disable();
-map.doubleClickZoom.disable();
-map.scrollWheelZoom.disable();
-if (map.tap) map.tap.disable();
+var locationPulse = document.createElement('div')
+locationPulse.className = 'location-pulse'
+locationPulse.innerHTML = '<div class="pulse"></div>'
 
-var locationIcon = L.icon({
-  iconUrl:    "<%= asset_path('bluedot.png') %>",
-  iconSize:   [17, 17],
-  iconAnchor: [8,  8],
-  className:  "location-icon"
-});
+var carData = [], stateData = []
+var carPathLayer
+var carGeoJSON = { type: 'LineString', coordinates: [] }
 
-var locationPulse = L.divIcon({
-  iconSize:  [50, 50],
-  className: "location-pulse",
-  html:      "<div class='pulse'></div>"
-});
+var locationMarker      = new mapboxgl.Marker(locationIcon, { offset: [-8, -8] })
+var locationMarkerPulse = new mapboxgl.Marker(locationPulse, { offset: [-25, -25] })
 
-var carData = [], stateData = [];
-var carPathLayer, routePathLayer;
-var carGeoJSON = { type: 'LineString', coordinates: [] };
-
-var locationMarker      = L.marker([103, -89], { icon: locationIcon  });
-var locationMarkerPulse = L.marker([103, -89], { icon: locationPulse });
-
-locationMarkerPulse.addTo(map);
-locationMarker.addTo(map);
+locationMarkerPulse.setLngLat([103, -89]).addTo(map);
+locationMarker.setLngLat([103, -89]).addTo(map);
 
 var progressLoaded = false;
 var stateLoaded = false;
@@ -56,8 +34,32 @@ var checkLoading = function() {
 };
 
 var addRouteLayer = function() {
-  routePathLayer = L.geoJson(routeGeoJSON, { style: { color:"#6699ff", weight: 6 } }).addTo(map);
-};
+  map.addSource("routePath", wrapGeoJson(routeGeoJSON))
+  map.addLayer({
+    id:     "routePath",
+    type:   "line",
+    source: "routePath",
+    layout: { "line-join": "round", "line-cap":  "round" },
+    paint:  { "line-opacity": 0.75, "line-color": "#6699ff", "line-width": 6 }
+  })
+
+  stopsGeoJSON.features.forEach(function(marker) {
+    var markerDiv = document.createElement('div')
+    markerDiv.className = 'marker marker-' + marker.properties['marker-symbol']
+
+    new mapboxgl.Marker(markerDiv, { offset: [ -18, -45 ] })
+      .setLngLat(marker.geometry.coordinates)
+      .addTo(map)
+  })
+
+  var bounds = routeGeoJSON.coordinates.reduce(function(bounds, coord) {
+    return bounds.extend(coord);
+  }, new mapboxgl.LngLatBounds(routeGeoJSON.coordinates[0], routeGeoJSON.coordinates[0]))
+
+  map.fitBounds(bounds, {
+    padding: 100
+  })
+}
 
 var loadTelemetry = function() {
   $.ajax({ dataType: "json", url: "/telemetry" }).done(function(carData) {
@@ -67,7 +69,14 @@ var loadTelemetry = function() {
       carGeoJSON.coordinates.push([carData[i].lng, carData[i].lat]);
     }
 
-    carPathLayer = L.geoJson(carGeoJSON, { style: { color:"#dd6600", weight: 3, dashArray: "5,10" } }).addTo(map);
+    map.addSource("carPath", wrapGeoJson(carGeoJSON))
+    map.addLayer({
+      id:     "carPath",
+      type:   "line",
+      source: "carPath",
+      layout: {"line-join": "round", "line-cap": "round"},
+      paint:  {"line-dasharray": [5,10], "line-color": "#dd6600", "line-width": 3}
+    })
 
     progressLoaded = true;
     checkLoading();
@@ -77,8 +86,8 @@ var loadTelemetry = function() {
 var fetchState = function() {
   // Current state & location
   $.ajax({ dataType: "json", url: "/telemetry/state" }).done(function(stateData) {
-    locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
-    locationMarker.setLatLng([stateData.latitude, stateData.longitude]);
+    locationMarkerPulse.setLngLat([stateData.longitude, stateData.latitude]);
+    locationMarker.setLngLat([stateData.longitude, stateData.latitude]);
 
     var stateDiv = $("#state");
 
@@ -132,11 +141,24 @@ var connectSocket = function() {
   };
 };
 
-$(function() {
+map.on('load', function() {
   addRouteLayer();
   if ($(".loading").length == 1) {
     loadTelemetry();
     fetchState();
     connectSocket();
   }
-});
+})
+
+function wrapGeoJson(geoJson) {
+  return {
+    type: 'geojson',
+    data: {
+      type:     "FeatureCollection",
+      features: [{
+        type:     "Feature",
+        geometry: geoJson
+      }]
+    }
+  }
+}
