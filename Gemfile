@@ -15,6 +15,7 @@ gem 'dotenv-rails'
 # Asset pipeline
 gem 'sassc-rails', '~> 1.3.0'
 gem 'slim-rails', '~> 3.1'
+gem 'uglifier'
 
 # Frontend frameworks
 gem 'jquery-rails'

@@ -211,6 +211,8 @@ GEM
     tilt (2.0.5)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
+    uglifier (3.0.4)
+      execjs (>= 0.3.0, < 3)
     websocket-driver (0.6.4)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.2)
@@ -247,6 +249,7 @@ DEPENDENCIES
   spring
   spring-watcher-listen (~> 2.0.0)
   tesla_api
+  uglifier
 
 RUBY VERSION
    ruby 2.3.3p222
