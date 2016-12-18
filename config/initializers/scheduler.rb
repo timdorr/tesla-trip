@@ -4,6 +4,7 @@ scheduler = Rufus::Scheduler::singleton
 scheduler.every '1m' do
   Rails.logger.info 'Refresh Telemetry Cache'
   require_relative '../../lib/data_cache'
+  require_relative '../../lib/influxdb_data'
   ::DataCache.telemetry
 end
 
