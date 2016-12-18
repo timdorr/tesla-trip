@@ -27,5 +27,9 @@ TeslaTrip::Application.configure do
   # number of complex assets.
   config.assets.debug = true
 
+  logger = ActiveSupport::Logger.new(STDOUT)
+  logger.formatter = config.log_formatter
+  config.logger = ActiveSupport::TaggedLogging.new(logger)
+
   Slim::Engine.set_options pretty: true, sort_attrs: false, format: :html
 end

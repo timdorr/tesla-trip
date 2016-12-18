@@ -1,3 +1,2 @@
-web: bundle exec puma -p $PORT
-clock: bundle exec clockwork lib/clockwork.rb
+web: bundle exec rails s -p $PORT
 stream: bundle exec rake tesla:stream

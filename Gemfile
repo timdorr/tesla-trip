@@ -46,7 +46,7 @@ gem 'responders'
 gem 'tesla_api'
 
 # Jerbs
-gem 'clockwork'
+gem 'rufus-scheduler'
 
 # Google
 gem 'polylines'
