@@ -106,7 +106,7 @@ var fetchState = function() {
     // Charging
     stateDiv.find(".charge_rate dd").text(stateData.charge_rate+" MPH");
     stateDiv.find(".time_to_full dd").text(stateData.time_to_full_charge+" hours");
-    stateDiv.find(".battery_level dd").text(stateData.battery_level+"%");
+    stateDiv.find(".battery_level dd").text(stateData.usable_battery_level+"%");
     stateDiv.find(".range dd").text(stateData.battery_range + " miles");
 
     // Climate
