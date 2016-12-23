@@ -9,7 +9,7 @@ class InfluxdbData
   end
 
   def latest_state
-    @latest ||= map_stream_to_state($influxdb.query('SELECT * FROM telematics LIMIT 1').first['values'].first)
+    @latest ||= map_stream_to_state($influxdb.query('SELECT * FROM telematics ORDER BY time DESC LIMIT 1').first['values'].first)
   end
 
   private
