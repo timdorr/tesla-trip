@@ -131,8 +131,8 @@ var connectSocket = function() {
     var stateData = JSON.parse(event.data);
     var stateDiv = $("#state");
 
-    locationMarkerPulse.setLatLng([stateData.latitude, stateData.longitude]);
-    locationMarker.setLatLng([stateData.latitude, stateData.longitude]);
+    locationMarkerPulse.setLngLat([stateData.longitude, stateData.latitude]);
+    locationMarker.setLngLat([stateData.longitude, stateData.latitude]);
 
     stateDiv.find(".lat dd").text(stateData.latitude);
     stateDiv.find(".lng dd").text(stateData.longitude);
