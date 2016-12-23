@@ -10,9 +10,8 @@ module TeslaTrip
       @clients = []
 
       Thread.new do
-        uri = URI.parse(ENV['REDIS_URL'])
-        redis_sub = Redis.new(host: uri.host, port: uri.port, password: uri.password)
-        redis_sub.subscribe(CHANNEL) do |on|
+        redis = Redis.new
+        redis.subscribe(CHANNEL) do |on|
           on.message do |channel, msg|
             @clients.each { |ws| ws.send(msg) }
           end
