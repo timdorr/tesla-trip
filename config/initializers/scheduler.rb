@@ -1,4 +1,4 @@
-if Rails.env.production?
+if Time.parse(ENV['START_TIME']) > Time.now && Time.parse(ENV['END_TIME']) < Time.now
   Rails.logger.info 'Starting scheduler...'
   scheduler = Rufus::Scheduler::singleton
 
