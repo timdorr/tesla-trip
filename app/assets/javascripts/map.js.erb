@@ -1,6 +1,7 @@
 var map = new mapboxgl.Map({
   container: 'map',
-  style: 'http://cdn.showcaseidx.com/mapbox/streets-v9.nofonts.json',
+  // style: 'https://timdorr.com/mapbox/streets-v9.nofonts.json',
+  style: 'mapbox://styles/mapbox/streets-v9',
   center: [-77, 38]
 })
 
@@ -15,8 +16,8 @@ var carData = [], stateData = []
 var carPathLayer
 var carGeoJSON = { type: 'LineString', coordinates: [] }
 
-var locationMarker      = new mapboxgl.Marker(locationIcon, { offset: [-8, -8] })
-var locationMarkerPulse = new mapboxgl.Marker(locationPulse, { offset: [-25, -25] })
+var locationMarker      = new mapboxgl.Marker(locationIcon)
+var locationMarkerPulse = new mapboxgl.Marker(locationPulse)
 
 locationMarkerPulse.setLngLat([103, -89]).addTo(map);
 locationMarker.setLngLat([103, -89]).addTo(map);
@@ -47,7 +48,7 @@ var addRouteLayer = function() {
     var markerDiv = document.createElement('div')
     markerDiv.className = 'marker marker-' + marker.properties['marker-symbol']
 
-    new mapboxgl.Marker(markerDiv, { offset: [ -18, -45 ] })
+    new mapboxgl.Marker(markerDiv)
       .setLngLat(marker.geometry.coordinates)
       .addTo(map)
   })
