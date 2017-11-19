@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def map
-    render :intro if Time.parse(ENV['START_TIME']) > Time.now
+    render :intro if (Time.parse(ENV['START_TIME']) - 12.hours) > Time.now
   end
 
   def intro
