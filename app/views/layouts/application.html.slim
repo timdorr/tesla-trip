@@ -38,6 +38,6 @@ html
     script src='https://api.mapbox.com/mapbox-gl-js/v0.42.1/mapbox-gl.js'
     javascript:
       mapboxgl.accessToken = "#{ENV['MAPBOX_TOKEN']}";
-      var socket_url = "ws://#{request.host_with_port}";
+      var socket_url = "wss://#{request.host_with_port}";
 
     = javascript_include_tag "application"
