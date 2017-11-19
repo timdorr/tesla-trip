@@ -26,25 +26,8 @@ class DataCache
     vehicle = JSON.parse(vehicle)
     ms = TeslaApi::Vehicle.new(tesla_api.class, tesla_api.email, vehicle['id'], vehicle)
 
-    puts 'getting charge state'
-    charge_state = ms.charge_state rescue nil
-    if charge_state.present?
-      car_state = JSON.parse($redis.get('car-state')) || {}
-      $redis.set('car-state', car_state.merge(charge_state).to_json)
-    end
-
-    puts 'getting drive state'
-    drive_state = ms.drive_state rescue nil
-    if drive_state.present?
-      car_state = JSON.parse($redis.get('car-state')) || {}
-      $redis.set('car-state', car_state.merge(drive_state).to_json)
-    end
-
-    puts 'getting climate state'
-    climate_state = ms.climate_state rescue nil
-    if climate_state.present?
-      car_state = JSON.parse($redis.get('car-state')) || {}
-      $redis.set('car-state', car_state.merge(climate_state).to_json)
-    end
+    puts 'getting state'
+    state = ms.api.get("/vehicles/#{ms.id}/data")['response'] rescue nil
+    $redis.set('car-state', state.to_json) if state.present?
   end
 end
