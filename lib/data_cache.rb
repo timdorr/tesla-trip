@@ -28,6 +28,12 @@ class DataCache
 
     puts 'getting state'
     state = ms.api.get("/vehicles/#{ms.id}/data")['response'] rescue nil
+    state = state.merge(state.delete('vehicle_state'))
+    state = state.merge(state.delete('drive_state'))
+    state = state.merge(state.delete('charge_state'))
+    state = state.merge(state.delete('climate_state'))
+    state = state.merge(state.delete('gui_settings'))
+    state = state.merge(state.delete('vehicle_config'))
     $redis.set('car-state', state.to_json) if state.present?
   end
 end
