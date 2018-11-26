@@ -2,19 +2,23 @@ source 'https://rubygems.org'
 
 ruby '2.5.3'
 
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.2.0'
+
+# System
+gem 'warning'
+gem 'bootsnap'
+gem 'dotenv-rails'
 
 # Backend
 gem 'pg'
 gem 'influxdb'
-gem 'redis'
+gem 'hiredis'
+gem 'redis', require: %w(redis redis/connection/hiredis)
 gem 'puma'
-gem 'foreman', require: false
-gem 'dotenv-rails'
 
 # Asset pipeline
-gem 'sassc-rails', '~> 1.3.0'
-gem 'slim-rails', '~> 3.1'
+gem 'sassc-rails', '~> 2.0.0'
+gem 'slim-rails', '~> 3.2'
 gem 'uglifier'
 
 # Frontend frameworks
