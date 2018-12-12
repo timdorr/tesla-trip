@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  font-family: 'adelle-sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.marker {
+  width: 35px;
+  height: 90px;
+  background-size: 35px 90px;
+
+  &.marker-building {
+    background-image: url('./images/marker-building.png');
+  }
+  &.marker-fuel {
+    background-image: url('./images/marker-fuel.png');
+  }
+  &.marker-lodging {
+    background-image: url('./images/marker-lodging.png');
+  }
+}

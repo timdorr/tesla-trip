@@ -1,0 +1,17 @@
+{
+  "presets": [
+    [
+      "env",
+      {
+        "targets": {
+          "browsers": "last 5 Chrome versions"
+        },
+        "loose": true,
+        "modules": false,
+        "useBuiltIns": true
+      }
+    ],
+    "react"
+  ],
+  "plugins": ["babel-plugin-styled-components"]
+}

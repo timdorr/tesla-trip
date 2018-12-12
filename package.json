@@ -1,0 +1,25 @@
+{
+  "name": "tesla-trip",
+  "private": true,
+  "license": "MIT",
+  "repository": "github:timdorr/tesla-trip",
+  "scripts": {
+    "start": "parcel client/index.html -d public/",
+    "build": "parcel build --no-source-maps client/index.html -d public/"
+  },
+  "dependencies": {
+    "mapbox-gl": "^0.51.0",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "styled-components": "^4.1.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-plugin-styled-components": "^1.9.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "dotenv": "^6.2.0",
+    "parcel-bundler": "^1.10.3",
+    "sass": "^1.15.2"
+  }
+}
