@@ -32,9 +32,7 @@ export default class Map extends Component {
       container: this.mapContainer,
       style: 'mapbox://styles/timdorr/cjp7rb5ra36fj2sn2df2dctaj',
       center: [-77, 38],
-      zoom: 5,
-      bearing: 0,
-      pitch: 45
+      zoom: 5
     })
 
     this.map.on('load', () => {
@@ -74,7 +72,11 @@ export default class Map extends Component {
 
   handleToggle = () => {
     if (this.state.overview) {
-      this.map.fitBounds(bounds, { padding: 100 })
+      this.map.fitBounds(bounds, {
+        padding: 100,
+        bearing: 0,
+        pitch: 0
+      })
     } else {
       this.map.flyTo({
         bearing: 27,
