@@ -54,6 +54,7 @@ gem 'rufus-scheduler'
 
 # Google
 gem 'polylines'
+gem 'simplify_rb'
 
 # Sockets
 gem 'faye-websocket', '~> 0.10'
