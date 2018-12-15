@@ -6,8 +6,15 @@ import mapboxgl, { Map as MapBox, Marker, LngLatBounds } from 'mapbox-gl'
 
 mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
+import Toggle from './toggle'
+
 import { routeGeoJSON, stopsGeoJSON } from '../route'
 import wrapGeoJSON from '../utils/wrapGeoJSON'
+
+const bounds = routeGeoJSON.coordinates.reduce(
+  (bounds, coord) => bounds.extend(coord),
+  new LngLatBounds(routeGeoJSON.coordinates[0], routeGeoJSON.coordinates[0])
+)
 
 const MapContainer = styled.div`
   position: absolute;
@@ -18,6 +25,8 @@ const MapContainer = styled.div`
 `
 
 export default class Map extends Component {
+  state = { overview: true }
+
   componentDidMount() {
     this.map = new MapBox({
       container: this.mapContainer,
@@ -55,17 +64,7 @@ export default class Map extends Component {
           .addTo(this.map)
       })
 
-      const bounds = routeGeoJSON.coordinates.reduce(
-        (bounds, coord) => bounds.extend(coord),
-        new LngLatBounds(
-          routeGeoJSON.coordinates[0],
-          routeGeoJSON.coordinates[0]
-        )
-      )
-
-      this.map.fitBounds(bounds, {
-        padding: 100
-      })
+      this.handleToggle()
     })
   }
 
@@ -73,7 +72,35 @@ export default class Map extends Component {
     this.map.remove()
   }
 
+  handleToggle = () => {
+    if (this.state.overview) {
+      this.map.fitBounds(bounds, { padding: 100 })
+    } else {
+      this.map.flyTo({
+        bearing: 27,
+        center: [-84.4696992, 33.9798434],
+        zoom: 13,
+        pitch: 40
+      })
+    }
+  }
+
+  toggleOverview = event => {
+    event.preventDefault()
+    const { overview } = this.state
+
+    this.setState({ overview: !overview }, this.handleToggle)
+  }
+
   render() {
-    return <MapContainer ref={el => (this.mapContainer = el)} />
+    return (
+      <div>
+        <Toggle
+          overview={this.state.overview}
+          toggleOverview={this.toggleOverview}
+        />
+        <MapContainer ref={el => (this.mapContainer = el)} />
+      </div>
+    )
   }
 }
