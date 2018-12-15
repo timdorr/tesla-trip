@@ -2982,94 +2982,13 @@ export const stopsGeoJSON = {
     {
       type: 'Feature',
       properties: {
-        title: 'Charlotte Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-80.76579, 35.34075],
-        type: 'Point'
-      },
-      id: '4afdf3be79988f8956e36a3753e10311'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Woodbridge Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'lodging'
-      },
-      geometry: {
-        coordinates: [-77.29584, 38.643325],
-        type: 'Point'
-      },
-      id: '525ef32fe11ce616c8a8adbab5e17809'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Cranbury Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-74.4869, 40.32244],
-        type: 'Point'
-      },
-      id: '54bc7ef44c79c423b7b3a78e03c451f7'
-    },
-    {
-      type: 'Feature',
-      properties: {
         title: 'Start',
         'marker-size': 'large',
         'marker-color': '#1087bf',
         'marker-symbol': 'building'
       },
-      geometry: {
-        coordinates: [-84.46942, 33.980018],
-        type: 'Point'
-      },
+      geometry: { coordinates: [-84.46942, 33.980018], type: 'Point' },
       id: '581885e28c274787962576123d3be97e'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'End',
-        'marker-color': '#1087bf',
-        'marker-symbol': 'building'
-      },
-      geometry: {
-        coordinates: [-71.295, 42.832],
-        type: 'Point'
-      },
-      id: '62d208ee1598086c278fd674349afa48'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Auburn Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-71.832516, 42.203608],
-        type: 'Point'
-      },
-      id: '703b36efb72bbaa3c5bbd190e15dccba'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Newark Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-75.69188, 39.662408],
-        type: 'Point'
-      },
-      id: '747d916e9479194a1814d3619e885e87'
     },
     {
       type: 'Feature',
@@ -3078,50 +2997,18 @@ export const stopsGeoJSON = {
         'marker-color': '#c5e96f',
         'marker-symbol': 'fuel'
       },
-      geometry: {
-        coordinates: [-82.306952, 34.825893],
-        type: 'Point'
-      },
+      geometry: { coordinates: [-82.306952, 34.825893], type: 'Point' },
       id: '9c8fa1be61e897c3268bebe0e357cd10'
     },
     {
       type: 'Feature',
       properties: {
-        title: 'Glen Allen Supercharger',
-        'marker-color': '#f5c272',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-77.461619, 37.669021],
-        type: 'Point'
-      },
-      id: 'cdf22501d41e44e73bc02457b87b933b'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'Greenwich Supercharger',
+        title: 'Charlotte Supercharger',
         'marker-color': '#c5e96f',
         'marker-symbol': 'fuel'
       },
-      geometry: {
-        coordinates: [-73.671661, 41.041538],
-        type: 'Point'
-      },
-      id: 'dac33992870b2d8964790caa2507b3c7'
-    },
-    {
-      type: 'Feature',
-      properties: {
-        title: 'South Hill Supercharger',
-        'marker-color': '#c5e96f',
-        'marker-symbol': 'fuel'
-      },
-      geometry: {
-        coordinates: [-78.103517, 36.748516],
-        type: 'Point'
-      },
-      id: 'df21abfc05e18fbf0613d7017272d3ec'
+      geometry: { coordinates: [-80.76579, 35.34075], type: 'Point' },
+      id: '4afdf3be79988f8956e36a3753e10311'
     },
     {
       type: 'Feature',
@@ -3130,11 +3017,88 @@ export const stopsGeoJSON = {
         'marker-color': '#c5e96f',
         'marker-symbol': 'fuel'
       },
-      geometry: {
-        coordinates: [-79.511222, 36.070788],
-        type: 'Point'
-      },
+      geometry: { coordinates: [-79.511222, 36.070788], type: 'Point' },
       id: 'e6060d14ae749b4fe2d9c5ed880cede2'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'South Hill Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-78.103517, 36.748516], type: 'Point' },
+      id: 'df21abfc05e18fbf0613d7017272d3ec'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Glen Allen Supercharger',
+        'marker-color': '#f5c272',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-77.461619, 37.669021], type: 'Point' },
+      id: 'cdf22501d41e44e73bc02457b87b933b'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Springfield Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'lodging'
+      },
+      geometry: { coordinates: [-77.177549, 38.774445], type: 'Point' },
+      id: '525ef32fe11ce616c8a8adbab5e17809'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Newark Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-75.69188, 39.662408], type: 'Point' },
+      id: '747d916e9479194a1814d3619e885e87'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Cranbury Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-74.4869, 40.32244], type: 'Point' },
+      id: '54bc7ef44c79c423b7b3a78e03c451f7'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Greenwich Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-73.671661, 41.041538], type: 'Point' },
+      id: 'dac33992870b2d8964790caa2507b3c7'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'Auburn Supercharger',
+        'marker-color': '#c5e96f',
+        'marker-symbol': 'fuel'
+      },
+      geometry: { coordinates: [-71.832516, 42.203608], type: 'Point' },
+      id: '703b36efb72bbaa3c5bbd190e15dccba'
+    },
+    {
+      type: 'Feature',
+      properties: {
+        title: 'End',
+        'marker-color': '#1087bf',
+        'marker-symbol': 'building'
+      },
+      geometry: { coordinates: [-71.295, 42.832], type: 'Point' },
+      id: '62d208ee1598086c278fd674349afa48'
     }
   ],
   type: 'FeatureCollection'
