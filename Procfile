@@ -1,2 +1,2 @@
-web: bundle exec rails s -p $PORT
-stream: bundle exec rake tesla:stream
+web: bin/rails s -p $PORT
+stream: bin/rails tesla:stream
