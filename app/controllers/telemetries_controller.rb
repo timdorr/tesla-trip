@@ -34,6 +34,7 @@ class TelemetriesController < ApplicationController
 
   def map_stream_to_state(stream)
     {
+        'heading' => stream['est_heading'],
         'latitude' => stream['est_lat'],
         'longitude' => stream['est_lng'],
         'speed' => stream['speed'],

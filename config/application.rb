@@ -17,5 +17,8 @@ Bundler.require(*Rails.groups)
 module TeslaTrip
   class Application < Rails::Application
     config.autoload_paths += %W(#{config.root}/lib)
+
+    require_relative '../app/middleware/telemetry_socket'
+    config.middleware.insert_before 0, TeslaTrip::TelemetrySocket
   end
 end
