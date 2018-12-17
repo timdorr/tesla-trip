@@ -19,7 +19,7 @@ class InfluxdbData
   end
 
   def series_keys
-    %w(odometer speed est_lat est_lng soc power)
+    %w(odometer speed est_lat est_lng est_heading soc power)
   end
 
   def map_stream_to_state(stream)
