@@ -219,7 +219,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     temple (0.8.0)
-    tesla_api (1.4.0)
+    tesla_api (1.4.1)
       em-http-request
       faye-websocket
       httparty
