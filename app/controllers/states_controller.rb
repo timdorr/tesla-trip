@@ -1,0 +1,22 @@
+class StatesController < ApplicationController
+  before_action :ensure_authentication_token, only: [:create]
+
+  def show
+    state = $redis.get('car-state')
+    respond_with state
+  end
+
+  def create
+    stream = JSON.parse(stream_params[:state])
+    $redis.publish(TeslaTrip::TelemetrySocket::CHANNEL, format_state(stream).to_json)
+    render json: {status: 'ok'}
+  end
+
+  private
+
+  def format_state(stream)
+    {
+        type: 'state',
+    }
+  end
+end

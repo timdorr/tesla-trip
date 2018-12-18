@@ -51,7 +51,7 @@ class TeslaStreamReader
   end
 
   def write_to_socket(state)
-    HTTParty.post(ENV['TRIP_URL'], body: { api_token: ENV['WS_TOKEN'], state: state.to_json })
+    HTTParty.post("#{ENV['TRIP_URL']}/telemetry", body: { api_token: ENV['WS_TOKEN'], state: state.to_json })
   rescue
     puts "Websocket error: #{$!}"
   end

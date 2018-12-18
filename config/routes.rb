@@ -1,10 +1,6 @@
 TeslaTrip::Application.routes.draw do
-  resource :telemetry do
-    get :state
+  constraints format: :json do
+    resource :telemetry
+    resource :state
   end
-
-  get 'map',   to: 'pages#map'
-  get 'intro', to: 'pages#intro'
-
-  root 'pages#map'
 end

@@ -34,6 +34,13 @@ class DataCache
     state = state.merge(state.delete('climate_state'))
     state = state.merge(state.delete('gui_settings'))
     state = state.merge(state.delete('vehicle_config'))
+
     $redis.set('car-state', state.to_json) if state.present?
+
+    begin
+      HTTParty.post("#{ENV['TRIP_URL']}/state", body: { api_token: ENV['WS_TOKEN'], state: state.to_json })
+    rescue
+      puts "Websocket error: #{$!}"
+    end
   end
 end
