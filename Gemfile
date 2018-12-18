@@ -16,18 +16,6 @@ gem 'hiredis'
 gem 'redis', require: %w(redis redis/connection/hiredis)
 gem 'puma'
 
-# Asset pipeline
-gem 'sassc-rails', '~> 2.0.0'
-gem 'slim-rails', '~> 3.2'
-gem 'uglifier'
-
-# Frontend frameworks
-gem 'jquery-rails'
-gem 'bootstrap-sass', '~> 3.2'
-gem 'bourbon'
-gem 'handlebars_assets'
-gem 'momentjs-rails'
-
 group :development, :test do
   gem 'byebug', platform: :mri
 end
