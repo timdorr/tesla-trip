@@ -1,11 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
 
+import CarState from './components/car_state'
 import TeslaMap from './components/map'
 
 render(
-  <React.Fragment>
-    <TeslaMap />
-  </React.Fragment>,
+  <CarState>{state => <TeslaMap {...state} />}</CarState>,
   document.getElementById('root')
 )
