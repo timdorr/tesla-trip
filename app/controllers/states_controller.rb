@@ -14,9 +14,9 @@ class StatesController < ApplicationController
 
   private
 
-  def format_state(stream)
+  def format_state(state)
     {
-        type: 'state',
-    }
+        type: 'state'
+    }.merge(state)
   end
 end
