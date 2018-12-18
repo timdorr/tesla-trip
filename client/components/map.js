@@ -77,12 +77,16 @@ export default class Map extends Component {
         pitch: 0
       })
     } else {
-      this.state.map.flyTo({
-        bearing: 27,
-        center: [-84.4696992, 33.9798434],
-        zoom: 13,
-        pitch: 40
-      })
+      if (this.props.telemetry) {
+        const { heading, latitude, longitude } = this.props.telemetry
+
+        this.state.map.flyTo({
+          bearing: heading,
+          center: [longitude, latitude],
+          zoom: 13,
+          pitch: 40
+        })
+      }
     }
   }
 
@@ -96,10 +100,12 @@ export default class Map extends Component {
   render() {
     return (
       <div>
-        <Toggle
-          overview={this.state.overview}
-          toggleOverview={this.toggleOverview}
-        />
+        {this.props.telemetry && (
+          <Toggle
+            overview={this.state.overview}
+            toggleOverview={this.toggleOverview}
+          />
+        )}
         <Path map={this.state.map} />
         <MapContainer ref={el => (this.mapContainer = el)} />
       </div>

@@ -3,8 +3,8 @@ import { Component } from 'react'
 import wrapGeoJSON from '../utils/wrapGeoJSON'
 
 export default class Path extends Component {
-  async componentDidUpdate() {
-    if (this.props.map) {
+  async componentDidUpdate({ map: prevMap }) {
+    if (this.props.map !== prevMap) {
       const telemetry = await (await fetch('/telemetry.json')).json()
 
       const carGeoJSON = { type: 'LineString', coordinates: [] }
