@@ -13,5 +13,9 @@
     ],
     "react"
   ],
-  "plugins": ["babel-plugin-styled-components", "transform-class-properties"]
+  "plugins": [
+    "babel-plugin-styled-components",
+    "transform-class-properties",
+    "transform-object-rest-spread"
+  ]
 }
