@@ -7,6 +7,7 @@ import mapboxgl, { Map as MapBox, Marker, LngLatBounds } from 'mapbox-gl'
 mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
 import Toggle from './toggle'
+import Dot from './dot'
 import Path from './path'
 
 import { routeGeoJSON, stopsGeoJSON } from '../route'
@@ -108,6 +109,22 @@ export default class Map extends Component {
     this.setState({ overview: !overview }, this.handleToggle)
   }
 
+  getLatestLocation = () => {
+    if (!this.props.telemetry && this.props.state) {
+      return {
+        latitude: this.props.state.latitude,
+        longitude: this.props.state.longitude
+      }
+    } else if (this.props.telemetry) {
+      return {
+        latitude: this.props.telemetry.latitude,
+        longitude: this.props.telemetry.longitude
+      }
+    } else {
+      return {}
+    }
+  }
+
   render() {
     return (
       <div>
@@ -117,6 +134,7 @@ export default class Map extends Component {
             toggleOverview={this.toggleOverview}
           />
         )}
+        <Dot map={this.state.map} {...this.getLatestLocation()} />
         <Path map={this.state.map} />
         <MapContainer ref={el => (this.mapContainer = el)} />
       </div>
