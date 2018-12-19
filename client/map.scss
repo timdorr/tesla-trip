@@ -21,10 +21,13 @@ body {
 }
 
 .location-icon {
-  width: 17px;
-  height: 17px;
-  background-image: url('./images/bluedot.png');
-  background-size: 17px 17px;
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  background-color: #5086ec;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 20px rgba(80, 134, 236, 0.75);
 }
 
 .location-pulse {
@@ -33,15 +36,15 @@ body {
 
   .pulse {
     position: relative;
-    top: -1px;
+    z-index: 1;
+    top: -2px;
     left: -1px;
     height: 50px;
     width: 50px;
     animation: pulsate 1.5s ease-in-out infinite;
-    border: 1pt solid #fff;
+    border: 1pt solid #abc4f0;
     border-radius: 51px;
-    box-shadow: inset 0 0 5px #06f, inset 0 0 5px #06f, inset 0 0 5px #06f,
-      0 0 5px #06f, 0 0 5px #06f, 0 0 5px #06f;
+    box-shadow: inset 0 0 50px #abc4f0;
   }
 }
 
@@ -50,7 +53,7 @@ body {
     transform: scale(0.25);
     opacity: 1;
   }
-  95% {
+  85% {
     transform: scale(1.3);
     opacity: 0;
   }
