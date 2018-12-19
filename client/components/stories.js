@@ -6,6 +6,11 @@ import tim from '../images/story.tim.jpg'
 import becca from '../images/story.becca.jpg'
 
 const StoryBox = styled.div`
+  display: grid;
+  grid-template-rows: 35px;
+  grid-template-areas: 'title title';
+  grid-gap: 0 20px;
+  justify-items: center;
   position: absolute;
   z-index: 1;
   top: 20px;
@@ -17,9 +22,9 @@ const StoryBox = styled.div`
 `
 
 const StoryTitle = styled.h3`
+  grid-area: title;
   height: 20px;
   margin: 0;
-  margin-left: 7px;
   padding-left: 25px;
   font-weight: 500;
   font-size: 14px;
@@ -28,10 +33,9 @@ const StoryTitle = styled.h3`
 `
 
 const StoryLink = styled.a`
-  display: inline-block;
+  display: block;
   height: 52px;
   width: 52px;
-  margin: 20px 10px 0;
   background: url('${props => props.avatar}') no-repeat top left / 52px;
   border: 2px solid white;
   border-radius: 50%;
