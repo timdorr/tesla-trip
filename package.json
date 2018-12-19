@@ -5,7 +5,12 @@
   "repository": "github:timdorr/tesla-trip",
   "scripts": {
     "start": "parcel client/index.html -d public/",
-    "build": "parcel build --no-source-maps client/index.html -d public/"
+    "build": "parcel build client/index.html -d public/",
+    "heroku-postbuild": "parcel build --no-source-maps client/index.html -d public/"
+  },
+  "engines": {
+    "node": "11.x",
+    "npm": "6.x"
   },
   "dependencies": {
     "mapbox-gl": "^0.51.0",
