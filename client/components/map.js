@@ -69,6 +69,17 @@ export default class Map extends Component {
     this.state.map.remove()
   }
 
+  componentDidUpdate() {
+    if (!this.state.overview && this.props.telemetry) {
+      const { heading, latitude, longitude } = this.props.telemetry
+
+      this.state.map.easeTo({
+        bearing: heading,
+        center: [longitude, latitude]
+      })
+    }
+  }
+
   handleToggle = () => {
     if (this.state.overview) {
       this.state.map.fitBounds(bounds, {
