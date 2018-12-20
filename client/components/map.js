@@ -27,7 +27,7 @@ const MapContainer = styled.div`
 `
 
 export default class Map extends Component {
-  state = { overview: true, map: null }
+  state = { overview: true, map: null, flying: false }
 
   componentDidMount() {
     const map = new MapBox({
@@ -64,6 +64,14 @@ export default class Map extends Component {
 
       this.setState({ map }, this.handleToggle)
     })
+
+    map.on('pitchstart', () => {
+      this.setState({ flying: true })
+    })
+
+    map.on('pitchend', () => {
+      this.setState({ flying: false })
+    })
   }
 
   componentWillUnmount() {
@@ -71,7 +79,12 @@ export default class Map extends Component {
   }
 
   componentDidUpdate() {
-    if (!this.state.overview && this.props.telemetry) {
+    if (
+      this.state.map &&
+      !this.state.flying &&
+      !this.state.overview &&
+      this.props.telemetry
+    ) {
       const { heading, latitude, longitude } = this.props.telemetry
 
       this.state.map.easeTo({
