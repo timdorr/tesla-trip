@@ -1,11 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { Box } from './styles'
+
 import instagramLogo from '../images/instagram.png'
 import tim from '../images/story.tim.jpg'
 import becca from '../images/story.becca.jpg'
 
-const StoryBox = styled.div`
+const StoryBox = styled(Box)`
   display: grid;
   grid-template-rows: 35px;
   grid-template-areas: 'title title';
@@ -16,9 +18,6 @@ const StoryBox = styled.div`
   top: 20px;
   left: 20px;
   padding: 20px;
-  background: #f6f6f6;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
 `
 
 const StoryTitle = styled.h3`
