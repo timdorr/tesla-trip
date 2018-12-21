@@ -7,6 +7,7 @@ import mapboxgl, { Map as MapBox, Marker, LngLatBounds } from 'mapbox-gl'
 mapboxgl.accessToken = process.env.MAPBOX_TOKEN
 
 import Toggle from './toggle'
+import Tooltip from './tooltip'
 import Dot from './dot'
 import Path from './path'
 
@@ -125,6 +126,7 @@ export default class Map extends Component {
     event.preventDefault()
     const { overview } = this.state
 
+    localStorage.toggled = true
     this.setState({ overview: !overview }, this.handleToggle)
   }
 
@@ -148,10 +150,13 @@ export default class Map extends Component {
     return (
       <div>
         {this.props.telemetry && (
-          <Toggle
-            overview={this.state.overview}
-            toggleOverview={this.toggleOverview}
-          />
+          <React.Fragment>
+            <Toggle
+              overview={this.state.overview}
+              toggleOverview={this.toggleOverview}
+            />
+            {!localStorage.toggled && <Tooltip />}
+          </React.Fragment>
         )}
         <Dot map={this.state.map} {...this.getLatestLocation()} />
         <Path map={this.state.map} />
