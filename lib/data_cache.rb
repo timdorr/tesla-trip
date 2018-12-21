@@ -35,6 +35,13 @@ class DataCache
     state = state.merge(state.delete('gui_settings'))
     state = state.merge(state.delete('vehicle_config'))
 
+    state.delete('id')
+    state.delete('id_s')
+    state.delete('vin')
+    state.delete('user_id')
+    state.delete('vehicle_id')
+    state.delete('tokens')
+
     $redis.set('car-state', state.to_json) if state.present?
 
     begin
