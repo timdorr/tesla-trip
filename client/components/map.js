@@ -24,6 +24,11 @@ const MapContainer = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
+  height: 100%;
+
+  @media screen and (device-width: 412px) and (device-height: 823px) and (-webkit-device-pixel-ratio: 3.5) and (orientation: portrait) {
+    height: 1100px;
+  }
 `
 
 export default class Map extends Component {

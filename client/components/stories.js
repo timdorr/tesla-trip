@@ -18,6 +18,12 @@ const StoryBox = styled(Box)`
   top: 20px;
   left: 20px;
   padding: 20px;
+
+  @media (min-width: 768px) {
+    grid-template-rows: 40px;
+    top: 10px;
+    left: 10px;
+  }
 `
 
 const StoryTitle = styled.h3`
@@ -29,6 +35,10 @@ const StoryTitle = styled.h3`
   font-size: 14px;
   line-height: 18px;
   background: transparent url('${instagramLogo}') no-repeat left top / 20px;
+
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
 `
 
 const StoryLink = styled.a`
@@ -51,6 +61,20 @@ const StoryLink = styled.a`
     height: 60px;
     background: linear-gradient(to bottom, #d82b7e, #f57939);
     border-radius: 50%;
+  }
+
+  @media (min-width: 768px) {
+    height: 90px;
+    width: 90px;
+    background-size: 90px;
+    border: 3px solid white;
+
+    :after {
+      margin-top: -6px;
+      margin-left: -6px;
+      width: 102px;
+      height: 102px;
+    }
   }
 `
 
