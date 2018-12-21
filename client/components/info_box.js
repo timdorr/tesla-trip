@@ -64,15 +64,15 @@ export default function InfoBox({
           <InfoTitle>Time To Full: </InfoTitle>
           <InfoData>{time_to_full_charge} hours</InfoData>
         </React.Fragment>
-      ) : shift_state != 'P' ? (
+      ) : shift_state == 'P' || shift_state == null ? (
+        <InfoStatus>Parked</InfoStatus>
+      ) : (
         <React.Fragment>
           <InfoStatus>Driving</InfoStatus>
 
           <InfoTitle>Speed: </InfoTitle>
           <InfoData>{speed} mph</InfoData>
         </React.Fragment>
-      ) : (
-        <InfoStatus>Parked</InfoStatus>
       )}
 
       <InfoTitle>Battery Level: </InfoTitle>
