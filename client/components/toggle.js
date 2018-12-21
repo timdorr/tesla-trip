@@ -16,7 +16,7 @@ const Switch = styled.div`
     height: 49px;
   }
 
-  @media (min-width: 768px) {
+  @media (max-width: 767.98px) {
     top: 10px;
     right: 10px;
 
