@@ -1,7 +1,21 @@
+@font-face {
+  font-family: 'gtham';
+  src: url('./fonts/gtham-400.woff2') format('woff2'),
+    url('./fonts/gtham-400.woff') format('woff');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'gtham';
+  src: url('./fonts/gtham-600.woff2') format('woff2'),
+    url('./fonts/gtham-600.woff') format('woff');
+  font-weight: 600;
+}
+
 html,
 body {
   height: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'gtham', sans-serif;
 }
 
 .marker {
