@@ -12,7 +12,7 @@ render(
     <CarState>
       {state => (
         <React.Fragment>
-          <InfoBox state={state.state} />
+          <InfoBox state={state.state} telemetry={state.telemetry || {}} />
           <TeslaMap {...state} />
         </React.Fragment>
       )}

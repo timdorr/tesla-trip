@@ -42,16 +42,27 @@ function toFahrenheit(celsius) {
 export default function InfoBox({
   state: {
     charging_state,
-    shift_state,
-    speed,
+    shift_state: stateShift,
+    speed: stateSpeed,
     charge_rate,
     time_to_full_charge,
-    usable_battery_level,
-    battery_range,
+    usable_battery_level: stateBattery,
+    battery_range: stateRange,
     outside_temp,
     inside_temp
+  },
+  telemetry: {
+    shift_state: telemetryShift,
+    speed: telemetrySpeed,
+    range: telemetryRange,
+    battery_level: telemetryBattery
   }
 }) {
+  const shift_state = telemetryShift !== undefined ? telemetryShift : stateShift
+  const speed = telemetrySpeed || stateSpeed
+  const battery_level = telemetryBattery || stateBattery
+  const range = telemetryRange || stateRange
+
   return (
     <InfoContainer>
       {charging_state == 'Charging' ? (
@@ -64,7 +75,7 @@ export default function InfoBox({
           <InfoTitle>Time To Full: </InfoTitle>
           <InfoData>{time_to_full_charge} hours</InfoData>
         </React.Fragment>
-      ) : shift_state == 'P' || shift_state == null ? (
+      ) : shift_state == 'P' || shift_state == null || shift_state == '' ? (
         <InfoStatus>Parked</InfoStatus>
       ) : (
         <React.Fragment>
@@ -76,10 +87,10 @@ export default function InfoBox({
       )}
 
       <InfoTitle>Battery Level: </InfoTitle>
-      <InfoData>{Math.round(usable_battery_level)}%</InfoData>
+      <InfoData>{Math.round(battery_level)}%</InfoData>
 
       <InfoTitle>Range: </InfoTitle>
-      <InfoData>{Math.round(battery_range)} mi</InfoData>
+      <InfoData>{Math.round(range)} mi</InfoData>
 
       {outside_temp && (
         <React.Fragment>
