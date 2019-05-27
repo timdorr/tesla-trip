@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.5.3'
 
-gem 'rails', '~> 5.2.0'
+gem 'rails', '~> 5.2.2'
 
 # System
 gem 'warning'
