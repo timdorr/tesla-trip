@@ -27,6 +27,6 @@
     "babel-preset-react": "^6.24.1",
     "dotenv": "^8.0.0",
     "parcel-bundler": "^1.12.3",
-    "sass": "^1.22.1"
+    "sass": "^1.22.10"
   }
 }
