@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "mapbox-gl": "^0.51.0",
-    "react": "^16.9.0",
+    "react": "^16.10.1",
     "react-dom": "^16.9.0",
     "styled-components": "^4.4.0"
   },
