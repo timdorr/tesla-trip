@@ -16,7 +16,7 @@
     "mapbox-gl": "^0.51.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
