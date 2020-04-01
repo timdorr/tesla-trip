@@ -125,7 +125,7 @@ GEM
     nokogiri (1.10.8)
       mini_portile2 (~> 2.4.0)
     oj (3.10.5)
-    pg (1.2.2)
+    pg (1.2.3)
     polylines (0.3.0)
     public_suffix (3.0.3)
     puma (4.3.3)
