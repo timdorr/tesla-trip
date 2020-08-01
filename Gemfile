@@ -45,4 +45,4 @@ gem 'polylines'
 gem 'simplify_rb'
 
 # Sockets
-gem 'faye-websocket', '~> 0.10'
+gem 'faye-websocket', '~> 0.11'
