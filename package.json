@@ -13,7 +13,7 @@
     "npm": "6.x"
   },
   "dependencies": {
-    "mapbox-gl": "^0.51.0",
+    "mapbox-gl": "^1.11.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "styled-components": "^4.4.1"
