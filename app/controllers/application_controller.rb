@@ -1,8 +1,6 @@
 class ApplicationController < ActionController::API
   respond_to :json
 
-  force_ssl if: ->() { !Rails.env.development? }
-
   protected
 
   def ensure_authentication_token

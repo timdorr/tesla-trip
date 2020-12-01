@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 ruby '2.7.2'
 
-gem 'rails', '~> 5.2.2'
+gem 'rails', '~> 6.0.0'
 
 # System
 gem 'warning'
@@ -35,7 +35,7 @@ gem 'oj'
 gem 'responders'
 
 # Tesla
-gem 'tesla_api'
+gem 'tesla_api', '~> 1.0'
 
 # Jerbs
 gem 'rufus-scheduler'
