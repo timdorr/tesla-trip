@@ -56,7 +56,6 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
-    cause (0.1)
     coderay (1.1.3)
     concurrent-ruby (1.1.6)
     cookiejar (0.3.3)
@@ -94,10 +93,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    influxdb (0.3.13)
-      cause
-      json
-    json (2.3.0)
+    influxdb (0.8.0)
     listen (3.3.3)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
