@@ -35,7 +35,7 @@ gem 'oj'
 gem 'responders'
 
 # Tesla
-gem 'tesla_api', '~> 1.0'
+gem 'tesla_api'
 
 # Jerbs
 gem 'rufus-scheduler'
