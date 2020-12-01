@@ -1,8 +1,6 @@
 if ENV['REDIS_URL']
   $redis = Redis.new
 
-  Oj.mimic_JSON
-
   # Monkey patch in caching for Redis
   class Redis
     def cache(key, expire=nil, recalculate=false)
