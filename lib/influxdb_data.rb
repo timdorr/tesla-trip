@@ -5,11 +5,11 @@ class InfluxdbData
       FROM telematics
       WHERE time > #{start.to_i}s AND time < #{stop.to_i}s
       GROUP BY time(1m) fill(none)"
-    ).first.try(:[], 'values')
+    ).dig(0, 'values')
   end
 
   def latest_state
-    @latest ||= map_stream_to_state($influxdb.query('SELECT * FROM telematics ORDER BY time DESC LIMIT 1').first['values'].first)
+    @latest ||= map_stream_to_state($influxdb.query('SELECT * FROM telematics ORDER BY time DESC LIMIT 1').dig(0, 'values', 0))
   end
 
   private
