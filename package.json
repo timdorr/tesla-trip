@@ -13,9 +13,9 @@
     "yarn": "1.x"
   },
   "dependencies": {
-    "mapbox-gl": "^0.51.0",
-    "react": "^16.14.0",
-    "react-dom": "^16.14.0",
+    "mapbox-gl": "^1.13.0",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -27,6 +27,7 @@
     "babel-preset-react": "^6.24.1",
     "dotenv": "^8.2.0",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^2.2.1",
     "sass": "^1.29.0"
   }
 }

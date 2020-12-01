@@ -41,8 +41,7 @@ export default function Tooltip() {
     <TooltipBox>
       <TooltipTitle>Now in 3D!</TooltipTitle>
       <TooltipText>
-        Click on the button above to toggle between the trip overview and a 3D
-        overhead view of us as we drive.
+        Click on the button above to toggle between the trip overview and a 3D overhead view of us as we drive.
       </TooltipText>
     </TooltipBox>
   )

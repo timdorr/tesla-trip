@@ -87,16 +87,8 @@ export default function Stories() {
   return (
     <StoryBox>
       <StoryTitle>Instagram Stories</StoryTitle>
-      <StoryLink
-        href="https://www.instagram.com/stories/bexandchar/"
-        target="_blank"
-        avatar={becca}
-      />
-      <StoryLink
-        href="https://www.instagram.com/stories/timdorr/"
-        target="_blank"
-        avatar={tim}
-      />
+      <StoryLink href="https://www.instagram.com/stories/bexandchar/" target="_blank" avatar={becca} />
+      <StoryLink href="https://www.instagram.com/stories/timdorr/" target="_blank" avatar={tim} />
     </StoryBox>
   )
 }

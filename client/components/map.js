@@ -39,7 +39,7 @@ export default class Map extends Component {
   componentDidMount() {
     const map = new MapBox({
       container: this.mapContainer,
-      style: 'mapbox://styles/timdorr/cjp7rb5ra36fj2sn2df2dctaj',
+      style: 'mapbox://styles/mapbox/streets-v11',
       center: [-77, 38],
       zoom: 5
     })
@@ -63,8 +63,7 @@ export default class Map extends Component {
 
       stopsGeoJSON.features.forEach(marker => {
         const markerDiv = document.createElement('div')
-        markerDiv.className =
-          'marker marker-' + marker.properties['marker-symbol']
+        markerDiv.className = 'marker marker-' + marker.properties['marker-symbol']
 
         new Marker(markerDiv).setLngLat(marker.geometry.coordinates).addTo(map)
       })
@@ -86,12 +85,7 @@ export default class Map extends Component {
   }
 
   componentDidUpdate() {
-    if (
-      this.state.map &&
-      !this.state.flying &&
-      !this.state.overview &&
-      this.props.telemetry
-    ) {
+    if (this.state.map && !this.state.flying && !this.state.overview && this.props.telemetry) {
       const { heading, latitude, longitude } = this.props.telemetry
 
       this.state.map.easeTo({
@@ -151,10 +145,7 @@ export default class Map extends Component {
       <div>
         {this.props.telemetry && (
           <React.Fragment>
-            <Toggle
-              overview={this.state.overview}
-              toggleOverview={this.toggleOverview}
-            />
+            <Toggle overview={this.state.overview} toggleOverview={this.toggleOverview} />
             {!localStorage.toggled && <Tooltip />}
           </React.Fragment>
         )}
