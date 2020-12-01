@@ -9,8 +9,8 @@
     "heroku-postbuild": "parcel build --no-source-maps client/index.html -d public/"
   },
   "engines": {
-    "node": "11.x",
-    "npm": "6.x"
+    "node": "14.x",
+    "yarn": "1.x"
   },
   "dependencies": {
     "mapbox-gl": "^0.51.0",
