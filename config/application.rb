@@ -14,6 +14,8 @@ require 'action_view/railtie'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+require_relative '../app/middleware/telemetry_socket'
+
 module TeslaTrip
   class Application < Rails::Application
     config.load_defaults "6.0"
@@ -21,8 +23,8 @@ module TeslaTrip
     config.api_only = true
 
     config.autoload_paths << "#{config.root}/lib"
+    config.autoload_paths << "#{config.root}/app/middleware"
 
-    require_relative '../app/middleware/telemetry_socket'
-    config.middleware.insert_before 0, TeslaTrip::TelemetrySocket
+    config.middleware.insert_before 0, ::TelemetrySocket
   end
 end

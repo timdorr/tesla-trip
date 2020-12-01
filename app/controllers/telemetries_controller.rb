@@ -8,7 +8,7 @@ class TelemetriesController < ApplicationController
 
   def create
     stream = JSON.parse(stream_params[:state])
-    $redis.publish(TeslaTrip::TelemetrySocket::CHANNEL, format_state(stream).to_json)
+    $redis.publish(TelemetrySocket::CHANNEL, format_state(stream).to_json)
     render json: {status: 'ok'}
   end
 
