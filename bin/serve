@@ -1,0 +1,22 @@
+#!/usr/bin/env node
+
+require('dotenv').config()
+const { serve } = require('esbuild')
+
+const options = {
+  entryPoints: ['./client/app.tsx'],
+  outdir: './public',
+  loader: { '.png': 'file', '.jpg': 'file' },
+  publicPath: 'http://localhost:8000',
+  bundle: true,
+  define: {
+    'process.env.NODE_ENV': '"development"',
+    'process.env.MAPBOX_TOKEN': JSON.stringify(process.env.MAPBOX_TOKEN),
+    'process.env.WEBSOCKET_URL': JSON.stringify(process.env.WEBSOCKET_URL)
+  }
+}
+
+serve({}, options).then(server => {
+  console.log(`Server listening on http://localhost:${server.port}`)
+  // server.stop()
+})

@@ -1,0 +1,18 @@
+#!/usr/bin/env node
+
+require('dotenv').config()
+const { build } = require('esbuild')
+
+const options = {
+  entryPoints: ['./client/app.tsx'],
+  outdir: './public',
+  loader: { '.png': 'file', '.jpg': 'file' },
+  bundle: true,
+  define: {
+    'process.env.NODE_ENV': '"production"',
+    'process.env.MAPBOX_TOKEN': JSON.stringify(process.env.MAPBOX_TOKEN),
+    'process.env.WEBSOCKET_URL': JSON.stringify(process.env.WEBSOCKET_URL)
+  }
+}
+
+build(options).catch(() => process.exit(1))
