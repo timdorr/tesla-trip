@@ -8,3 +8,5 @@
 /.cache/
 /node_modules/
 /public/
+
+/client/map.css

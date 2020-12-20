@@ -1,13 +1,20 @@
 #!/usr/bin/env node
 
 require('dotenv').config()
+
+const { renderSync } = require('sass')
+
+renderSync({ file: './client/map.scss', outFile: './client/map.css' })
+
 const { build } = require('esbuild')
 
 const options = {
-  entryPoints: ['./client/app.tsx'],
+  entryPoints: ['./client/app.tsx', './client/map.css'],
   outdir: './public',
-  loader: { '.png': 'file', '.jpg': 'file' },
+  loader: { '.png': 'file', '.jpg': 'file', '.woff': 'file', '.woff2': 'file' },
   bundle: true,
+  minify: true,
+  target: ['es2020'],
   define: {
     'process.env.NODE_ENV': '"production"',
     'process.env.MAPBOX_TOKEN': JSON.stringify(process.env.MAPBOX_TOKEN),
