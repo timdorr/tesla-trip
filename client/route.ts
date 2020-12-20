@@ -1,4 +1,4 @@
-export const routeGeoJSON = {
+export const routeGeoJSON: GeoJSON.LineString = {
   type: 'LineString',
   coordinates: [
     [-84.46898999999999, 33.97654],
@@ -2935,7 +2935,7 @@ export const routeGeoJSON = {
   ]
 }
 
-export const stopsGeoJSON = {
+export const stopsGeoJSON: GeoJSON.FeatureCollection<GeoJSON.Point> = {
   features: [
     {
       type: 'Feature',

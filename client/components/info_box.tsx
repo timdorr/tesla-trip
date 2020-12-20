@@ -1,6 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
+import { useCarState } from './car_state'
+
 import { Box } from './styles'
 
 const InfoContainer = styled(Box)`
@@ -35,12 +37,14 @@ const InfoTitle = styled.div`
 `
 const InfoData = styled.div``
 
-function toFahrenheit(celsius) {
+function toFahrenheit(celsius: number) {
   return Math.round(celsius * (9 / 5) + 32)
 }
 
-export default function InfoBox({
-  state: {
+export default function InfoBox() {
+  const { state, telemetry } = useCarState()
+
+  const {
     charging_state,
     shift_state: stateShift,
     speed: stateSpeed,
@@ -50,14 +54,15 @@ export default function InfoBox({
     battery_range: stateRange,
     outside_temp,
     inside_temp
-  },
-  telemetry: {
+  } = state
+
+  const {
     shift_state: telemetryShift,
     speed: telemetrySpeed,
     range: telemetryRange,
     battery_level: telemetryBattery
-  }
-}) {
+  } = telemetry
+
   const shift_state = telemetryShift !== undefined ? telemetryShift : stateShift
   const speed = telemetrySpeed || stateSpeed
   const battery_level = telemetryBattery || stateBattery
@@ -66,7 +71,7 @@ export default function InfoBox({
   return (
     <InfoContainer>
       {charging_state == 'Charging' ? (
-        <React.Fragment>
+        <>
           <InfoStatus>Charging</InfoStatus>
 
           <InfoTitle>Charge Rate: </InfoTitle>
@@ -74,16 +79,16 @@ export default function InfoBox({
 
           <InfoTitle>Time To Full: </InfoTitle>
           <InfoData>{time_to_full_charge} hours</InfoData>
-        </React.Fragment>
+        </>
       ) : shift_state == 'P' || shift_state == null || shift_state == '' ? (
         <InfoStatus>Parked</InfoStatus>
       ) : (
-        <React.Fragment>
+        <>
           <InfoStatus>Driving</InfoStatus>
 
           <InfoTitle>Speed: </InfoTitle>
           <InfoData>{speed} mph</InfoData>
-        </React.Fragment>
+        </>
       )}
 
       <InfoTitle>Battery Level: </InfoTitle>
@@ -93,17 +98,17 @@ export default function InfoBox({
       <InfoData>{Math.round(range)} mi</InfoData>
 
       {outside_temp && (
-        <React.Fragment>
+        <>
           <InfoTitle>Outside Temp: </InfoTitle>
           <InfoData>{toFahrenheit(outside_temp)}º</InfoData>
-        </React.Fragment>
+        </>
       )}
 
       {inside_temp && (
-        <React.Fragment>
+        <>
           <InfoTitle>Inside Temp: </InfoTitle>
           <InfoData>{toFahrenheit(inside_temp)}º</InfoData>
-        </React.Fragment>
+        </>
       )}
     </InfoContainer>
   )

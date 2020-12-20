@@ -41,11 +41,11 @@ const StoryTitle = styled.h3`
   }
 `
 
-const StoryLink = styled.a`
+const StoryLink = styled.a<{ avatar: string }>`
   display: block;
   height: 52px;
   width: 52px;
-  background: url('${props => props.avatar}') no-repeat top left / 52px;
+  background: url('') no-repeat top left / 52px;
   border: 2px solid white;
   border-radius: 50%;
   text-decoration: none;
@@ -76,11 +76,6 @@ const StoryLink = styled.a`
       height: 102px;
     }
   }
-`
-
-const StoryImage = styled.img`
-  width: 100%;
-  height: 100%;
 `
 
 export default function Stories() {

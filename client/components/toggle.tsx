@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import styled from 'styled-components'
 
 import imageOverview from '../images/toggle.overview.png'
@@ -27,10 +27,10 @@ const Switch = styled.div`
   }
 `
 
-const Toggle = ({ overview, toggleOverview }) => (
-  <Switch onClick={toggleOverview}>
-    <img src={overview ? imageOverview : imageHeadsup} />
-  </Switch>
-)
-
-export default Toggle
+export default function Toggle({ overview, toggleOverview }: { overview: boolean; toggleOverview: MouseEventHandler }) {
+  return (
+    <Switch onClick={toggleOverview}>
+      <img src={overview ? imageOverview : imageHeadsup} />
+    </Switch>
+  )
+}
