@@ -17,6 +17,7 @@ const options = {
   loader: { '.png': 'file', '.jpg': 'file', '.woff': 'file', '.woff2': 'file' },
   publicPath: 'http://localhost:8000',
   bundle: true,
+  sourcemap: true,
   define: {
     'process.env.NODE_ENV': '"development"',
     'process.env.MAPBOX_TOKEN': JSON.stringify(process.env.MAPBOX_TOKEN),
