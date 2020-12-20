@@ -1,5 +1,5 @@
 import React, { MouseEventHandler } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import imageOverview from '../images/toggle.overview.png'
 import imageHeadsup from '../images/toggle.headsup.png'

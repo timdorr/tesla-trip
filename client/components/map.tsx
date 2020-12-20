@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import 'mapbox-gl/dist/mapbox-gl.css'
 import mapboxgl, { Map as MapBox, Marker, LngLatBounds, LngLatLike } from 'mapbox-gl'

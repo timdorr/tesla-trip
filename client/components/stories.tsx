@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 import { Box } from './styles'
 
@@ -45,13 +45,13 @@ const StoryLink = styled.a<{ avatar: string }>`
   display: block;
   height: 52px;
   width: 52px;
-  background: url('') no-repeat top left / 52px;
+  background: url('${props => props.avatar}') no-repeat top left / 52px;
   border: 2px solid white;
   border-radius: 50%;
   text-decoration: none;
 
   :after {
-    content: '\00a0';
+    content: '\\00a0';
     position: sticky;
     display: block;
     margin-top: -4px;
