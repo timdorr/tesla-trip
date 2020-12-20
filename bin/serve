@@ -2,9 +2,12 @@
 
 require('dotenv').config()
 
+const { resolve } = require('path')
+const { writeFileSync } = require('fs')
+
 const { renderSync } = require('sass')
 
-renderSync({ file: './client/map.scss', outFile: './client/map.css' })
+writeFileSync(resolve('./client/map.css'), renderSync({ file: resolve('./client/map.scss') }).css)
 
 const { serve } = require('esbuild')
 
