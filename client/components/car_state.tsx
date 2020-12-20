@@ -3,6 +3,7 @@ import React, { createContext, useState, useRef, useEffect, useContext, PropsWit
 interface State {
   latitude: number
   longitude: number
+  heading: number
   charging_state: string
   shift_state: string
   speed: number

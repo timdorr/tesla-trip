@@ -93,20 +93,7 @@ export default function Map() {
     }
   }, [])
 
-  useEffect(() => handleToggle(), [map])
-
   useEffect(() => {
-    if (map && !flying && !overview && telemetry) {
-      const { heading, latitude, longitude } = telemetry
-
-      map.easeTo({
-        bearing: heading,
-        center: [longitude, latitude]
-      })
-    }
-  })
-
-  const handleToggle = () => {
     if (overview) {
       map?.fitBounds(bounds, {
         padding: 100,
@@ -114,18 +101,14 @@ export default function Map() {
         pitch: 0
       })
     } else {
-      if (telemetry) {
-        const { heading, latitude, longitude } = telemetry
-
-        map?.flyTo({
-          bearing: heading,
-          center: [longitude, latitude],
-          zoom: 13,
-          pitch: 40
-        })
-      }
+      map?.flyTo({
+        bearing: telemetry.heading || state.heading,
+        center: [telemetry.longitude || state.longitude, telemetry.latitude || state.latitude],
+        zoom: 13,
+        pitch: 40
+      })
     }
-  }
+  }, [map, overview])
 
   const toggleOverview = (event: React.MouseEvent) => {
     event.preventDefault()
