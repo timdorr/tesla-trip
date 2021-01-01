@@ -84,7 +84,7 @@ GEM
       coderay (>= 1.0.0)
       erubi (>= 1.0.0)
       rack (>= 0.9.0)
-    binding_of_caller (0.8.0)
+    binding_of_caller (1.0.0)
       debug_inspector (>= 0.0.1)
     bootsnap (1.5.1)
       msgpack (~> 1.0)
@@ -95,7 +95,7 @@ GEM
     console (1.10.1)
       fiber-local
     crass (1.0.6)
-    debug_inspector (0.0.3)
+    debug_inspector (1.0.0)
     dotenv (2.7.6)
     dotenv-rails (2.7.6)
       dotenv (= 2.7.6)
