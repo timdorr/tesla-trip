@@ -202,7 +202,7 @@ GEM
       actionpack (>= 5.0)
       railties (>= 5.0)
     ruby2_keywords (0.0.2)
-    rufus-scheduler (3.6.0)
+    rufus-scheduler (3.7.0)
       fugit (~> 1.1, >= 1.1.6)
     simplify_rb (0.4.0)
     spring (2.1.1)
