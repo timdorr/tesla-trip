@@ -142,7 +142,7 @@ GEM
     nio4r (2.5.4)
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
-    oj (3.10.16)
+    oj (3.10.18)
     pg (1.2.3)
     polylines (0.3.0)
     protocol-hpack (1.4.2)
