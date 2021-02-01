@@ -222,10 +222,10 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/mapbox-gl@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@types/mapbox-gl/-/mapbox-gl-2.0.0.tgz#8b437465afe926270793a052e80dd8dd179e942f"
-  integrity sha512-VyRWSW9PeX9OTBZPWAd46W5kEvO4ui5iWN8jWyzDzQZHYbnW1df7H5HjuDH0nG4YEW2qk0dS+yByHZ2rSOxdkQ==
+"@types/mapbox-gl@^2.0.4":
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/@types/mapbox-gl/-/mapbox-gl-2.0.4.tgz#cc407ee56d4ac89e71340b3bedbb6cc58d9d27e9"
+  integrity sha512-0qxx/jK+/t5dcJ9LjTCvtcUamryk8yZUCQcpcOs/mQU6JipW15taAfUKvyNLC/PmhJYLSN5U4GrLFl6cBSGemg==
   dependencies:
     "@types/geojson" "*"
 
