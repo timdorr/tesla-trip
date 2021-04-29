@@ -124,7 +124,7 @@ GEM
     hiredis (0.6.3)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
-    influxdb (0.8.0)
+    influxdb (0.8.1)
     listen (3.5.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
