@@ -230,7 +230,7 @@ GEM
     timers (4.3.2)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
-    warning (1.1.0)
+    warning (1.2.0)
     websocket-driver (0.7.3)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
