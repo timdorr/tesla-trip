@@ -23,7 +23,7 @@
     "@types/mapbox-gl": "^2.3.3",
     "@types/node": "^15.12.5",
     "@types/react": "^17.0.12",
-    "@types/react-dom": "^17.0.8",
+    "@types/react-dom": "^17.0.9",
     "@types/styled-components": "^5.1.10",
     "dotenv": "^10.0.0",
     "esbuild": "^0.12.17",
