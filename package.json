@@ -26,7 +26,7 @@
     "@types/react-dom": "^17.0.11",
     "@types/styled-components": "^5.1.16",
     "dotenv": "^10.0.0",
-    "esbuild": "^0.14.1",
+    "esbuild": "^0.14.10",
     "prettier": "^2.5.0",
     "sass": "^1.44.0",
     "typescript": "^4.5.2"
