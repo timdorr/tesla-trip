@@ -114,7 +114,7 @@ GEM
     faye-websocket (0.11.1)
       eventmachine (>= 0.12.0)
       websocket-driver (>= 0.5.1)
-    ffi (1.15.3)
+    ffi (1.15.5)
     fiber-local (1.0.0)
     fugit (1.5.2)
       et-orbi (~> 1.1, >= 1.1.8)
@@ -125,7 +125,7 @@ GEM
     i18n (1.8.11)
       concurrent-ruby (~> 1.0)
     influxdb (0.8.1)
-    listen (3.7.0)
+    listen (3.7.1)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.13.0)
@@ -245,7 +245,7 @@ DEPENDENCIES
   faye-websocket (~> 0.11)
   hiredis
   influxdb
-  listen (~> 3.7.0)
+  listen (~> 3.7.1)
   meta_request
   oj
   pg
