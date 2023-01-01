@@ -238,10 +238,10 @@
     "@types/react" "*"
     hoist-non-react-statics "^3.3.0"
 
-"@types/mapbox-gl@^2.7.8":
-  version "2.7.8"
-  resolved "https://registry.yarnpkg.com/@types/mapbox-gl/-/mapbox-gl-2.7.8.tgz#7294ce0bd6a80997fc258ff981386b06e659a858"
-  integrity sha512-dqjHeYcUquenNOUMjhlZtbxrPJAE0+UwFq/KhAG5VWO2tX0ZxagSOmMPTruySf3sn7RFHMDd2kQKYmJlPC33xA==
+"@types/mapbox-gl@^2.7.10":
+  version "2.7.10"
+  resolved "https://registry.yarnpkg.com/@types/mapbox-gl/-/mapbox-gl-2.7.10.tgz#a3a32a366bad8966c0a40b78209ed430ba018ce1"
+  integrity sha512-nMVEcu9bAcenvx6oPWubQSPevsekByjOfKjlkr+8P91vawtkxTnopDoXXq1Qn/f4cg3zt0Z2W9DVsVsKRNXJTw==
   dependencies:
     "@types/geojson" "*"
 
@@ -699,10 +699,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-mapbox-gl@^2.11.0:
-  version "2.11.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.11.0.tgz#fa4839e81bdd6f6d9b9615ceee84bb88adb89b4c"
-  integrity sha512-zXbqHfEQMsta4iKO8bzXapDz1DihvZg24gmPJoQgUYAJxjc0NVVa5G/1QF3TIlpAJDD7WPzQSAogItab5oOF3A==
+mapbox-gl@^2.11.1:
+  version "2.11.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-2.11.1.tgz#72b69c29e51505aaf28b93c942b856ccc6b1a4d2"
+  integrity sha512-UzPi3m9i4t95M234sPmL3n9q2XpyHoyIFMXDjuJP+3OmzROwYUMzLcNMnPHrOmgwGicg99dr7rEJGYyEGr9i+A==
   dependencies:
     "@mapbox/geojson-rewind" "^0.5.2"
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
