@@ -21,7 +21,7 @@ group :development, :test do
 end
 
 group :development do
-  gem 'listen', '~> 3.7.1'
+  gem 'listen', '~> 3.8.0'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.1.0'
   gem 'better_errors'
