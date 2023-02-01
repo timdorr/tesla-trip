@@ -232,7 +232,7 @@ GEM
     rufus-scheduler (3.8.2)
       fugit (~> 1.1, >= 1.1.6)
     simplify_rb (0.4.0)
-    spring (4.1.0)
+    spring (4.1.1)
     spring-watcher-listen (2.1.0)
       listen (>= 2.7, < 4.0)
       spring (>= 4)
