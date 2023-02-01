@@ -133,7 +133,7 @@ GEM
     i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     influxdb (0.8.1)
-    listen (3.7.1)
+    listen (3.8.0)
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     loofah (2.19.1)
@@ -259,7 +259,7 @@ DEPENDENCIES
   faye-websocket (~> 0.11)
   hiredis
   influxdb
-  listen (~> 3.7.1)
+  listen (~> 3.8.0)
   meta_request
   oj
   pg
