@@ -169,7 +169,7 @@ GEM
     nokogiri (1.14.2)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
-    oj (3.14.0)
+    oj (3.14.2)
     pg (1.4.6)
     polylines (0.4.0)
     protocol-hpack (1.4.2)
