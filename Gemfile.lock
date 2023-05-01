@@ -163,7 +163,7 @@ GEM
       timeout
     net-smtp (0.3.3)
       net-protocol
-    nio4r (2.5.8)
+    nio4r (2.5.9)
     nokogiri (1.14.3)
       mini_portile2 (~> 2.8.0)
       racc (~> 1.4)
@@ -180,7 +180,7 @@ GEM
     protocol-websocket (0.7.5)
       protocol-http (~> 0.2)
       protocol-http1 (~> 0.2)
-    puma (6.2.1)
+    puma (6.2.2)
       nio4r (~> 2.0)
     raabro (1.4.0)
     racc (1.6.2)
