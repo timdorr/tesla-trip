@@ -29,6 +29,6 @@
     "esbuild": "^0.17.14",
     "prettier": "^2.8.7",
     "sass": "^1.60.0",
-    "typescript": "^5.0.3"
+    "typescript": "^5.0.4"
   }
 }
