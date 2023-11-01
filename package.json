@@ -24,7 +24,7 @@
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.8",
-    "@types/styled-components": "^5.1.28",
+    "@types/styled-components": "^5.1.29",
     "dotenv": "^16.3.1",
     "esbuild": "^0.19.5",
     "prettier": "^3.0.3",
