@@ -20,7 +20,7 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@types/mapbox-gl": "^2.7.15",
+    "@types/mapbox-gl": "^2.7.17",
     "@types/node": "^20.8.0",
     "@types/react": "^18.2.33",
     "@types/react-dom": "^18.2.8",
