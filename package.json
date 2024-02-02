@@ -22,7 +22,7 @@
   "devDependencies": {
     "@types/mapbox-gl": "^2.7.17",
     "@types/node": "^20.10.6",
-    "@types/react": "^18.2.46",
+    "@types/react": "^18.2.51",
     "@types/react-dom": "^18.2.18",
     "@types/styled-components": "^5.1.34",
     "dotenv": "^16.4.1",
