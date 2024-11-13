@@ -767,10 +767,10 @@ loose-envify@^1.1.0:
   dependencies:
     js-tokens "^3.0.0 || ^4.0.0"
 
-mapbox-gl@^3.7.0:
-  version "3.7.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.7.0.tgz#1c81826226ab21a8ec046e1686d4dd2794f9a756"
-  integrity sha512-dCbVyH1uGobwv6f4QKRv2Z2wuVT/RmspsudK3sTxGRFxZi6Pd2P9axdbVyZpmGddCAREy44pHhvzvO0qgpdKAg==
+mapbox-gl@^3.8.0:
+  version "3.8.0"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.8.0.tgz#81330a033e34b8a3b62f01c3f5d853e2307ef755"
+  integrity sha512-7iQ6wxAf8UedbNYTzNsyr2J25ozIBA4vmKY0xUDXQlHEokulzPENwjjmLxHQGRylDpOmR0c8kPEbtHCaQE2eMw==
   dependencies:
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^3.0.0"
