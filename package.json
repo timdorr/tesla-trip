@@ -13,7 +13,7 @@
     "yarn": "1.x"
   },
   "dependencies": {
-    "@emotion/react": "^11.13.3",
+    "@emotion/react": "^11.13.5",
     "@emotion/styled": "^11.13.5",
     "mapbox-gl": "^3.8.0",
     "react": "^18.3.1",
