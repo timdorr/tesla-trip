@@ -758,10 +758,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@^3.9.0:
-  version "3.9.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.9.0.tgz#b6d0720f80d9ef3c8091359f2840615c7e973f48"
-  integrity sha512-QKAxLHcbdoqobXuhu2PP6HJDSy0/GhfZuO5O8BrmwfR0ihZbA5ihYD/u0wGqu2QTDWi/DbgCWJIlV2mXh2Sekg==
+mapbox-gl@^3.9.1:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.9.1.tgz#9f206aaf2c45b5536f248eb88f5153ea8f07f3aa"
+  integrity sha512-KGgS07MOoGSrewRrw0zqPG/2zkUNWYVGhI4+OEGnUGnUR5GV+k6rgKBEZei3U8z9VIrhrO5Qfbh3Da9o7GhX/Q==
   dependencies:
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^3.0.0"
