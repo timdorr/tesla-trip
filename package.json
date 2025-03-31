@@ -16,7 +16,7 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",
     "mapbox-gl": "^3.10.0",
-    "react": "^19.0.0",
+    "react": "^19.1.0",
     "react-dom": "^19.0.0"
   },
   "devDependencies": {
