@@ -929,10 +929,10 @@ safe-buffer@~5.1.1:
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
   integrity sha512-Gd2UZBJDkXlY7GbJxfsE8/nvKkUEU1G38c1siN6QP6a9PT9MmHB8GnpscSmMJSoF8LOIrt8ud/wPtojys4G6+g==
 
-sass@^1.91.0:
-  version "1.91.0"
-  resolved "https://registry.yarnpkg.com/sass/-/sass-1.91.0.tgz#7d4f7f624b35d43f78da1c339cab24426e28d7fa"
-  integrity sha512-aFOZHGf+ur+bp1bCHZ+u8otKGh77ZtmFyXDo4tlYvT7PWql41Kwd8wdkPqhhT+h2879IVblcHFglIMofsFd1EA==
+sass@^1.92.0:
+  version "1.92.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.92.0.tgz#02d9ae21ce1763def2cd461449aac2eb56364796"
+  integrity sha512-KDNI0BxgIRDAfJgzNm5wuy+4yOCIZyrUbjSpiU/JItfih+KGXAVefKL53MTml054MmBA3DDKIBMSI/7XLxZJ3A==
   dependencies:
     chokidar "^4.0.0"
     immutable "^5.0.2"
