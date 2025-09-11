@@ -661,10 +661,10 @@ geojson-vt@^4.0.2:
   resolved "https://registry.yarnpkg.com/geojson-vt/-/geojson-vt-4.0.2.tgz#1162f6c7d61a0ba305b1030621e6e111f847828a"
   integrity sha512-AV9ROqlNqoZEIJGfm1ncNjEXfkz2hdFlZf0qkVfmkwdKa8vj7H16YUOT81rJw1rdFhyEDlN2Tds91p/glzbl5A==
 
-gl-matrix@^3.4.3:
-  version "3.4.3"
-  resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-3.4.3.tgz#fc1191e8320009fd4d20e9339595c6041ddc22c9"
-  integrity sha512-wcCp8vu8FT22BnvKVPjXa/ICBWRq/zjFfdofZy1WSpQZpphblv12/bOQLBC1rMM7SGOFS9ltVmKOHil5+Ml7gA==
+gl-matrix@^3.4.4:
+  version "3.4.4"
+  resolved "https://registry.yarnpkg.com/gl-matrix/-/gl-matrix-3.4.4.tgz#7789ee4982f62c7a7af447ee488f3bd6b0c77003"
+  integrity sha512-latSnyDNt/8zYUB6VIJ6PCh2jBjJX6gnDsoCZ7LyW7GkqrD51EWwa9qCoGixj8YqBtETQK/xY7OmpTF8xz1DdQ==
 
 grid-index@^1.1.0:
   version "1.1.0"
@@ -752,10 +752,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@^3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.14.0.tgz#62222309a812f3f5fba93a27846fe17b8688993b"
-  integrity sha512-KYhi9ZOQL4BB0J061admPH8O5ZZhhxsyiJ6DQCOkCaps0JEB4HF3SbJwu8S0pJKaQUxNS33sSbzW8iDSSauHPQ==
+mapbox-gl@^3.15.0:
+  version "3.15.0"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.15.0.tgz#32bc07f8c07b63a28ca916492acb7ee6b0a86a91"
+  integrity sha512-I42ffZpiXwt0PG3PO6gMYQnoz+AInkirLe/+zoHjcfBTFoFkKYtu5gFwT1WGeSvNrVTqG2Bwp9zUjPw0PFGY+w==
   dependencies:
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^3.0.0"
@@ -773,7 +773,7 @@ mapbox-gl@^3.14.0:
     csscolorparser "~1.0.3"
     earcut "^3.0.1"
     geojson-vt "^4.0.2"
-    gl-matrix "^3.4.3"
+    gl-matrix "^3.4.4"
     grid-index "^1.1.0"
     kdbush "^4.0.2"
     martinez-polygon-clipping "^0.7.4"
