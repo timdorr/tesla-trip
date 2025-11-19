@@ -470,14 +470,14 @@
   dependencies:
     csstype "^3.0.2"
 
-"@types/styled-components@^5.1.35":
-  version "5.1.35"
-  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.35.tgz#1a054d6312477cb1fb0631240cded5a2e6911702"
-  integrity sha512-JeYII52nSFGXGaw/5Odf0TBUhT3024HduBewrZCQBoUFKBw8V6x1dbnZCpgJuzmiokWAlVo3kkS3k3jrEK1NyA==
+"@types/styled-components@^5.1.36":
+  version "5.1.36"
+  resolved "https://registry.yarnpkg.com/@types/styled-components/-/styled-components-5.1.36.tgz#d63db8ad9005afc82f173012036c4c101dc93d57"
+  integrity sha512-pGMRNY5G2rNDKEv2DOiFYa7Ft1r0jrhmgBwHhOMzPTgCjO76bCot0/4uEfqj7K0Jf1KdQmDtAuaDk9EAs9foSw==
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
-    csstype "^3.0.2"
+    csstype "^3.2.2"
 
 "@types/supercluster@^7.1.3":
   version "7.1.3"
@@ -570,10 +570,10 @@ csscolorparser@~1.0.3:
   resolved "https://registry.yarnpkg.com/csscolorparser/-/csscolorparser-1.0.3.tgz#b34f391eea4da8f3e98231e2ccd8df9c041f171b"
   integrity sha1-s085HupNqPPpgjHizNjfnAQfFxs=
 
-csstype@^3.0.2:
-  version "3.0.5"
-  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.0.5.tgz#7fdec6a28a67ae18647c51668a9ff95bb2fa7bb8"
-  integrity sha512-uVDi8LpBUKQj6sdxNaTetL6FpeCqTjOvAQuQUa/qAqq8oOd4ivkbhgnqayl0dnPal8Tb/yB1tF+gOvCBiicaiQ==
+csstype@^3.0.2, csstype@^3.2.2:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/csstype/-/csstype-3.2.3.tgz#ec48c0f3e993e50648c86da559e2610995cf989a"
+  integrity sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ==
 
 detect-libc@^1.0.3:
   version "1.0.3"
