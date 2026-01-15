@@ -752,10 +752,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@^3.17.0:
-  version "3.17.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.17.0.tgz#c752c509f7ed5b0a410351f584c7ae1c3208290d"
-  integrity sha512-nCrDKRlr5di6xUksUDslNWwxroJ5yv1hT8pyVFtcpWJOOKsYQxF/wOFTMie8oxMnXeFkrz1Tl1TwA1XN1yX0KA==
+mapbox-gl@^3.18.0:
+  version "3.18.0"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.18.0.tgz#120f3744c63b180901daf18b43732f957fcf0e6f"
+  integrity sha512-xMr9HUoof0qPqWrVNK+kLiPtU1ogyfR6cihGSTB4eQAzdfFuMTC7CPrbpbZK0oUKQxXI/1qvB35FXZIK7kfR9w==
   dependencies:
     "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^3.0.0"
@@ -776,7 +776,7 @@ mapbox-gl@^3.17.0:
     gl-matrix "^3.4.4"
     grid-index "^1.1.0"
     kdbush "^4.0.2"
-    martinez-polygon-clipping "^0.7.4"
+    martinez-polygon-clipping "^0.8.1"
     murmurhash-js "^1.0.0"
     pbf "^4.0.1"
     potpack "^2.0.0"
@@ -784,14 +784,14 @@ mapbox-gl@^3.17.0:
     supercluster "^8.0.1"
     tinyqueue "^3.0.0"
 
-martinez-polygon-clipping@^0.7.4:
-  version "0.7.4"
-  resolved "https://registry.yarnpkg.com/martinez-polygon-clipping/-/martinez-polygon-clipping-0.7.4.tgz#f7b27f9bdf05fe8d770531605919eeb84764f237"
-  integrity sha512-jBEwrKtA0jTagUZj2bnmb4Yg2s4KnJGRePStgI7bAVjtcipKiF39R4LZ2V/UT61jMYWrTcBhPazexeqd6JAVtw==
+martinez-polygon-clipping@^0.8.1:
+  version "0.8.1"
+  resolved "https://registry.yarnpkg.com/martinez-polygon-clipping/-/martinez-polygon-clipping-0.8.1.tgz#72e5cfd7ebf6abc3f8a1bde85692822fe198d5c7"
+  integrity sha512-9PLLMzMPI6ihHox4Ns6LpVBLpRc7sbhULybZ/wyaY8sY3ECNe2+hxm1hA2/9bEEpRrdpjoeduBuZLg2aq1cSIQ==
   dependencies:
     robust-predicates "^2.0.4"
     splaytree "^0.1.4"
-    tinyqueue "^1.2.0"
+    tinyqueue "3.0.0"
 
 micromatch@^4.0.5:
   version "4.0.8"
@@ -983,12 +983,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tinyqueue@^1.2.0:
-  version "1.2.3"
-  resolved "https://registry.yarnpkg.com/tinyqueue/-/tinyqueue-1.2.3.tgz#b6a61de23060584da29f82362e45df1ec7353f3d"
-  integrity sha512-Qz9RgWuO9l8lT+Y9xvbzhPT2efIUIFd69N7eF7tJ9lnQl0iLj1M7peK7IoUGZL9DJHw9XftqLreccfxcQgYLxA==
-
-tinyqueue@^3.0.0:
+tinyqueue@3.0.0, tinyqueue@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/tinyqueue/-/tinyqueue-3.0.0.tgz#101ea761ccc81f979e29200929e78f1556e3661e"
   integrity sha512-gRa9gwYU3ECmQYv3lslts5hxuIa90veaEcxDYuu3QGOIAEM2mOZkVHp48ANJuu1CURtRdHKUBY5Lm1tHV+sD4g==
