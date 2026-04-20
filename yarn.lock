@@ -287,11 +287,6 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.28.0.tgz#04d90d5752b4ce65d2b6ac25eba08ff7624fe07c"
   integrity sha512-pEl1bO9mfAmIC+tW5btTmrKaujg3zGtUmWNdCw/xs70FBjwAL3o9OEKNHvNmnyylD6ubxUERiEhdsL0xBQ9efw==
 
-"@mapbox/jsonlint-lines-primitives@^2.0.2":
-  version "2.0.2"
-  resolved "https://registry.yarnpkg.com/@mapbox/jsonlint-lines-primitives/-/jsonlint-lines-primitives-2.0.2.tgz#ce56e539f83552b58d10d672ea4d6fc9adc7b234"
-  integrity sha1-zlblOfg1UrWNENZy6k1vya3HsjQ=
-
 "@mapbox/mapbox-gl-supported@^3.0.0":
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/@mapbox/mapbox-gl-supported/-/mapbox-gl-supported-3.0.0.tgz#bebd3d5da3c1fd988011bb79718a39f63f5e16ac"
@@ -742,12 +737,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@*, mapbox-gl@^3.21.0:
-  version "3.21.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.21.0.tgz#690f37507cb33acd0238a6ad7a344a4d74df6af2"
-  integrity sha512-0mv/LHDoW6QmxLEoNqCPuby428WTekfs38TtNXd/cxDOLdY6kFd/ztaSkcBeqNksbYSz2lXnPfBm8nN5+hxA0w==
+mapbox-gl@*, mapbox-gl@^3.22.0:
+  version "3.22.0"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.22.0.tgz#a20cf2c52ae6f5d463e0e9dabda7f8d774af541b"
+  integrity sha512-ZIpF+oAMcQoDlvABmiRkHoydyBR9zI6CyDeVRa2/iyua0/B2+rPuIzoCV/CgN14P5F0HVk53GIZw220WSqJPyA==
   dependencies:
-    "@mapbox/jsonlint-lines-primitives" "^2.0.2"
     "@mapbox/mapbox-gl-supported" "^3.0.0"
     "@mapbox/point-geometry" "^1.1.0"
     "@mapbox/tiny-sdf" "^2.0.6"
