@@ -16,13 +16,13 @@
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "mapbox-gl": "^3.24.0",
-    "react": "^19.2.6",
+    "react": "^19.2.7",
     "react-dom": "^19.2.6"
   },
   "devDependencies": {
     "@types/mapbox-gl": "^3.5.0",
     "@types/node": "^25.9.1",
-    "@types/react": "^19.2.15",
+    "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "@types/styled-components": "^5.1.36",
     "dotenv": "^17.4.2",
