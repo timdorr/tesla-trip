@@ -732,10 +732,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@*, mapbox-gl@^3.24.0:
-  version "3.24.0"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.24.0.tgz#84ed64980e762728276c6032c68db32b221b1041"
-  integrity sha512-R+FdFUB3DnoE5FYASV7lGSiRyMkSblcZ2UEy7b2pt7s5ZbCxFIUPXd0E6iAFd8OdvdA2VtbvZZVylzAZNaurjA==
+mapbox-gl@*, mapbox-gl@^3.24.1:
+  version "3.24.1"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.24.1.tgz#bcb931111e12b1f521d17a38cfb9d1616d97e685"
+  integrity sha512-e9Wj1TtGGOjzE/jtWaUvdFN7RYL3H0keEzH7gwzHbEdFAsmi03RaDVhnATmtFtIRXQUYf944CIQN0jQv+obeNg==
   dependencies:
     "@mapbox/mapbox-gl-supported" "^3.0.0"
     "@mapbox/point-geometry" "^1.1.0"
