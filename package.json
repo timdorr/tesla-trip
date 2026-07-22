@@ -27,7 +27,7 @@
     "@types/styled-components": "^5.1.36",
     "dotenv": "^17.4.2",
     "esbuild": "^0.28.1",
-    "prettier": "^3.9.5",
+    "prettier": "^3.9.6",
     "sass": "^1.101.3",
     "typescript": "^7.0.2"
   }
