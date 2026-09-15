@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@types/mapbox-gl": "^3.5.0",
-    "@types/node": "^26.5.0",
+    "@types/node": "^26.5.1",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.2.7",
     "@types/styled-components": "^5.1.36",
