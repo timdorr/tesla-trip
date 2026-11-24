@@ -756,10 +756,10 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
-mapbox-gl@*, mapbox-gl@^3.35.1:
-  version "3.35.1"
-  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.35.1.tgz#22e3b8f8aa2929717946e132710515edcd8be0d1"
-  integrity sha512-WqktvmKocW5oGbyc7tYHYJAsZzfSqpSqqALZhLec/459IP6l8nSrk5fNaBUF2KcuZNanTM2OwMWG0FP2vJuxiQ==
+mapbox-gl@*, mapbox-gl@^3.35.2:
+  version "3.35.2"
+  resolved "https://registry.yarnpkg.com/mapbox-gl/-/mapbox-gl-3.35.2.tgz#25732ccb71a3a3a68a5a5b09a2837b1261e98a4a"
+  integrity sha512-xM+0319FNTS2iOxl0Jelousi31L+ckzOxaXKkIlelanSe2jMlRRNVv3ESezPj6eUGlTDrfaxefk5QM6wQ3ICgg==
 
 micromatch@^4.0.5:
   version "4.0.8"
